@@ -16,13 +16,33 @@ require("lazy").setup({
     --> Aesthetic
     {"nvim-lualine/lualine.nvim", dependencies = {"nvim-tree/nvim-web-devicons"}},
     {"andweeb/presence.nvim"},
-    {"scottmckendry/cyberdream.nvim"},
     {"nvimdev/dashboard-nvim", event = "VimEnter", dependencies = {{"nvim-tree/nvim-web-devicons"}}},
+    {"ya2s/nvim-cursorline"},
+	{"lewis6991/hover.nvim"},
+
+    --> Themes
+    {"catppuccin/nvim", name = "catppuccin", priority = 1000},
     {"marko-cerovac/material.nvim"},
     {"EdenEast/nightfox.nvim"},
-    {"ya2s/nvim-cursorline"},
-    {"catppuccin/nvim", name = "catppuccin", priority = 1000},
+    {"scottmckendry/cyberdream.nvim"},
+
+    --> Functional
+    {"nvim-tree/nvim-web-devicons", opts = {}},
+    {"nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = {"nvim-lua/plenary.nvim"}},
     {"ggandor/lightspeed.nvim"},
+    {"Exafunction/codeium.nvim", dependencies = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}},
+    {"folke/todo-comments.nvim", dependencies = {"nvim-lua/plenary.nvim"}},
+    {"lewis6991/gitsigns.nvim"},
+    {"stevearc/oil.nvim", dependencies = {{"echasnovski/mini.icons", opts = {}}},},
+    {"windwp/nvim-autopairs", config = true, check_ts = true},
+    --[[
+    {"romgrk/barbar.nvim", dependencies = {"lewis6991/gitsigns.nvim", "nvim-tree/nvim-web-devicons"},
+        init = function() vim.g.barbar_auto_setup = false end,
+        opts = {},
+        version = "^1.0.0",
+    },
+    ]]
+
     {
     'MeanderingProgrammer/render-markdown.nvim',
     dependencies = { 'nvim-treesitter/nvim-treesitter', 'echasnovski/mini.nvim' }, -- if you use the mini.nvim suite
@@ -32,21 +52,6 @@ require("lazy").setup({
     ---@type render.md.UserConfig
     opts = {},
     },
-
-    --> Functional
-    {"nvim-tree/nvim-web-devicons", opts = {}},
-    {"nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = {"nvim-lua/plenary.nvim"}},
-    {"Exafunction/codeium.nvim", dependencies = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}},
-    {"folke/todo-comments.nvim", dependencies = {"nvim-lua/plenary.nvim"}},
-    {"lewis6991/gitsigns.nvim"},
-    {"stevearc/oil.nvim", dependencies = {{"echasnovski/mini.icons", opts = {}}},},
-    {"windwp/nvim-autopairs", config = true, check_ts = true},
-    {"romgrk/barbar.nvim", dependencies = {"lewis6991/gitsigns.nvim", "nvim-tree/nvim-web-devicons"},
-        init = function() vim.g.barbar_auto_setup = false end,
-        opts = {},
-        version = "^1.0.0",
-    },
-    {"lewis6991/hover.nvim"},
 
     --> LSP / Codecompletion (treesitter)
     {"williamboman/mason.nvim"},
