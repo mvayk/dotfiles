@@ -13,9 +13,12 @@ require("lspconfig").lua_ls.setup {
     }
 }
 
--- NOTE: this might not be needed
+local function is_windows()
+  return vim.loop.os_uname().version:match("Windows")
+end
+
 require("lspconfig").clangd.setup {
-    capabiltiies = capabilities
+    capabiltiies = capabilities,
 }
 
 require("lspconfig").rust_analyzer.setup {

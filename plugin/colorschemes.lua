@@ -1,7 +1,7 @@
 -- vim.cmd[[highlight Pmenu ctermbg=black guibg=black]]
 --// vim.g.material_style = "deep ocean"
 
-vim.cmd [[colorscheme cyberdream]]
+vim.cmd [[colorscheme catppuccin-macchiato]]
 vim.api.nvim_create_autocmd("ColorScheme", {
   pattern = "*",
   callback = function()
@@ -68,4 +68,4 @@ vim.api.nvim_create_autocmd("ColorScheme", {
   end
 })
 
-vim.cmd [[colorscheme cyberdream]]
+vim.cmd [[colorscheme catppuccin-macchiato]]
