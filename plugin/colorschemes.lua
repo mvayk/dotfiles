@@ -1,4 +1,4 @@
--- vim.cmd[[highlight Pmenu ctermbg=black guibg=black]]
+-- vim.cmd[[highpight Pmenu ctermbg=black guibg=black]]
 --// vim.g.material_style = "deep ocean"
 
 vim.cmd [[colorscheme catppuccin-macchiato]]

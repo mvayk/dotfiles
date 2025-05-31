@@ -17,13 +17,22 @@ local function is_windows()
   return vim.loop.os_uname().version:match("Windows")
 end
 
-require("lspconfig").clangd.setup {
+require("lspconfig").rust_analyzer.setup {
     capabiltiies = capabilities,
 }
 
-require("lspconfig").rust_analyzer.setup {
-    capabiltiies = capabilities
-}
+local clangd_path = "clangd"
+if is_windows() then
+  local local_appdata = vim.loop.os_getenv("LOCALAPPDATA")
+  clangd_path = local_appdata .. "\\nvim-data\\mason\\packages\\clangd\\clangd_20.1.0\\bin\\clangd.exe"
+end
+
+require("lspconfig").clangd.setup({
+  capabilities = capabilities,
+  init_options = {
+      fallbackFlags = {'--std=c++20'}
+  },
+})
 
 -- NOTE: Autocomplete
 local cmp = require("cmp")
