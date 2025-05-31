@@ -1,40 +1,10 @@
--- NOTE: LSP
 require("mason").setup()
 require("mason-lspconfig").setup({
-    ensure_installed = { "lua_ls", "clangd" }
+    ensure_installed = { "lua_ls", "clangd" },
+    automatic_enable = false
 })
 
 local capabilities = require('cmp_nvim_lsp').default_capabilities()
-
-require("mason-lspconfig").setup_handlers {
-    luau_lsp = function()
-        require("luau-lsp").setup() {
-            platform = {
-                type = "roblox",
-            },
-            types = {
-                roblox_security_level = "PluginSecurity",
-            },
-
-            server = {
-                server = {
-                    capabiltiies = capabilities,
-                },
-                settings = {
-                    ["luau-lsp"] = {
-                        completion = {
-                            imports = {
-                                enabled = true,
-                            }
-                        }
-                    }
-                }
-            }
-        }
-    end,
-}
-
-require("luau-lsp").config {...}
 
 require("lspconfig").lua_ls.setup {
     capabiltiies = capabilities,
