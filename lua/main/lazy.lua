@@ -29,7 +29,7 @@ require("lazy").setup({
     --> Functional
     {"nvim-tree/nvim-web-devicons", opts = {}},
     {"nvim-telescope/telescope.nvim", tag = "0.1.5", dependencies = {"nvim-lua/plenary.nvim"}},
-    {"ggandor/lightspeed.nvim"},
+    --{"ggandor/lightspeed.nvim"},
     {"Exafunction/codeium.nvim", dependencies = {"nvim-lua/plenary.nvim", "hrsh7th/nvim-cmp"}},
     {"folke/todo-comments.nvim", dependencies = {"nvim-lua/plenary.nvim"}},
     {"lewis6991/gitsigns.nvim"},
