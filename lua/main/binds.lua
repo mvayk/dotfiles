@@ -3,8 +3,4 @@ vim.g.mapleader = " "
 vim.keymap.set("n", "<C-n>", ":bnext<CR>")
 vim.keymap.set("n", "<C-p>", ":bprev<CR>")
 vim.keymap.set('n', '<leader>rn', vim.lsp.buf.rename, { desc = "Rename symbol" })
-vim.api.nvim_create_autocmd("CursorMoved", {
-  callback = function()
-    vim.cmd("nohlsearch")
-  end,
-})
+vim.keymap.set("n", "<leader>h", ":nohlsearch<CR>", { desc = "Clear search highlight" })
