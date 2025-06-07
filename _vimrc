@@ -19,6 +19,14 @@ set scrolloff=129000
 set nowrap
 
 set clipboard=unnamedplus
+nnoremap y "+y
+vnoremap y "+y
+nnoremap Y "+Y
+
+nnoremap p "+p
+nnoremap P "+P
+vnoremap p "+p
+vnoremap P "+P
 
 " i didnt know gvim could do this?
 call plug#begin('C:\Program Files\Vim\plugged')
