@@ -18,6 +18,8 @@ colorscheme blue
 set scrolloff=129000
 set nowrap
 
+set clipboard=unnamedplus
+
 " i didnt know gvim could do this?
 call plug#begin('C:\Program Files\Vim\plugged')
 Plug 'jiangmiao/auto-pairs'
@@ -27,7 +29,16 @@ call plug#end()
 let mapleader = "\<Space>"
 
 nnoremap <Leader>h :nohlsearch<CR>
+
+let g:ctrlp_map = ''
 nnoremap <Leader>ff :CtrlP<CR>
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'c'
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/](\.git|node_modules|\(badname\))$',
+      \ 'file': '\v\.(exe|dll|log)$'
+      \ }
+
 
 " Use the internal diff if available.
 " Otherwise use the special 'diffexpr' for Windows.
