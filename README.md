@@ -1,2 +1,2 @@
-# dotfiles
-contains my public dotfiles
+# gvim configuration
+vimrc path: `C:\Program Files\Vim`
