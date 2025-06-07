@@ -7,9 +7,13 @@ if has("gui_running")
     set guifont=Courier:h19:b:cANSI:qDRAFT
 endif
 
+set expandtab
 set tabstop=4
 set shiftwidth=4
-set expandtab
+set backspace=indent,eol,start
+
+set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:block
+colorscheme blue
 
 set scrolloff=129000
 set nowrap
