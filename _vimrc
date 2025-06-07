@@ -4,7 +4,7 @@
 set number
 set relativenumber
 if has("gui_running")
-    set guifont=Terminal:h14:b:cOEM:qDRAFT
+    set guifont=Courier:h19:b:cANSI:qDRAFT
 endif
 
 set tabstop=4
