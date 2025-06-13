@@ -37,6 +37,12 @@
 ;; This determines the style of line numbers in effect. If set to `nil', line
 ;; numbers are disabled. For relative line numbers, set this to `relative'.
 (setq display-line-numbers-type 'relative)
+(setq scroll-margin 9999)
+(setq-default indent-tabs-mode nil)
+
+;; Set indentation width
+(setq-default tab-width 4)
+(setq-default standard-indent 4)
 
 (setq doom-font (font-spec :family "SpaceMono Nerd Font" :size 14)
       doom-variable-pitch-font (font-spec :family "SpaceMono Nerd Font" :size 14)
