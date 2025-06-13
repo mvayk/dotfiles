@@ -1,2 +1,1 @@
-# dotfiles
-contains my public dotfiles
+# dotfiles for DOOM Emacs
