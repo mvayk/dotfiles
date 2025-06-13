@@ -46,6 +46,9 @@
 ;; change `org-directory'. It must be set before org loads!
 (setq org-directory "~/org/")
 
+;; Set window transparency (0 = fully transparent, 100 = fully opaque)
+(set-frame-parameter nil 'alpha-background 90) ; for current frame
+(add-to-list 'default-frame-alist '(alpha-background . 90)) ; for future frames
 
 ;; Whenever you reconfigure a package, make sure to wrap your config in an
 ;; `after!' block, otherwise Doom's defaults may override your settings. E.g.
