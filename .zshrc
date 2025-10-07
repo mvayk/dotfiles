@@ -5,6 +5,7 @@
 export ZSH="$HOME/.oh-my-zsh"
 export TERM="tmux-256color"
 export COLORTERM="truecolor"
+export ZSH_CUSTOM=$ZSH/custom/
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
@@ -75,6 +76,7 @@ ZSH_THEME=mh
 plugins=(
     git
     zsh-autosuggestions
+    zsh-completions
     zsh-syntax-highlighting
 )
 
