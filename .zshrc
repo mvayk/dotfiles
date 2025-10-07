@@ -6,6 +6,7 @@ export ZSH="$HOME/.oh-my-zsh"
 export TERM="tmux-256color"
 export COLORTERM="truecolor"
 export ZSH_CUSTOM=$ZSH/custom/
+export CURRENT_THEME="gruvbox"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
