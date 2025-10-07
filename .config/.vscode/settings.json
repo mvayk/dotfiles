@@ -1,0 +1,225 @@
+{
+  // Custom Imports (Custom CSS and JS Loader)
+  //"vscode_custom_css.imports": ["file:///C:/Users/mvayk/custom.css"],
+
+  //"apc.stylesheet": {
+    // "*": "font-family: Space Mono Nerd Font, monospace;",
+  //},
+
+  //"custom-ui-style.font.monospace": "Space Mono Nerd Font",
+  //"custom-ui-style.stylesheet": {
+    //".notification-toast": "box-shadow: none !important",
+    //".quick-input-widget.show-file-icons": "box-shadow: none !important",
+    //".quick-input-widget": "top: 25vh !important",
+    //".quick-input-list .scrollbar": "display: none",
+    //".monaco-action-bar.quick-input-inline-action-bar": "display: none",
+    //".editor-widget.find-widget": "box-shadow: none; border-radius: 4px",
+    //".quick-input-titlebar": "background: #100B15 !important",
+    //".monaco-workbench .part.editor > .content .editor-group-container > .title.title-border-bottom:after": "display: none",
+    //".monaco-scrollable-element > .shadow.top": "display: none",
+    //".sidebar .title-label": "padding: 0 !important",
+    //".sidebar": "border: none !important",
+    //".monaco-workbench .monaco-list:not(.element-focused):focus:before": "outline: none !important",
+    //".monaco-list-row.focused": "outline: none !important",
+    //".monaco-editor .scroll-decoration": "display: none",
+    //".title-actions": "display: none !important",
+    //".title.show-file-icons .label-container .monaco-icon-label.file-icon": "justify-content: center; padding: 0 !important",
+    //".title .monaco-icon-label:after": "margin-right: 0",
+    //".monaco-workbench .part.editor > .content .editor-group-container > .title > .label-container > .title-label": "padding-left: 60px",
+    //".title .monaco-icon-label.file-icon": "margin: 0 60px",
+    //".monaco-editor .cursors-layer .cursor": "background-image: linear-gradient(135deg, #ffaffc 10%, #DA70D6 100%)"
+  //},
+
+  "custom-ui-style.font.sansSerif": "SpaceMono Nerd Font",
+  "custom-ui-style.font.monospace": "SpaceMono Nerd Font",
+
+  // Workbench
+  "workbench.list.smoothScrolling": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.layoutControl.enabled": false,
+  "workbench.editor.showTabs": "single",
+  "workbench.startupEditor": "none",
+  "workbench.colorCustomizations": {
+    //"statusBar.background": "#B48EAD",
+    //"statusBar.noFolderBackground": "#B48EAD",
+    //"statusBar.debuggingBackground": "#B48EAD",
+    "statusBar.foreground": "#FFF",
+    "statusBar.debuggingForeground": "#000",
+    "editor.lineHighlightBackground": "#1073cf2d",
+    "editor.lineHighlightBorder": "#9fced11f",
+    "scrollbar.shadow": "#FFFFFF00",
+    "widget.shadow": "#FFFFFF00"
+  },
+  "window.zoomLevel": -1,
+  "window.titleBarStyle": "custom",
+
+  // Editor
+  "editor.suggest.showKeywords": false,
+  "editor.suggest.showWords": false,
+  "editor.suggest.showSnippets": false,
+  "editor.fontFamily": "'Space Mono Nerd Font', monospace",
+  "editor.fontLigatures": true,
+  "editor.fontSize": 18,
+  "editor.tabSize": 4,
+  "editor.detectIndentation": true,
+  "editor.autoClosingBrackets": "always",
+  "editor.insertSpaces": true,
+  "editor.autoClosingQuotes": "always",
+  "editor.minimap.enabled": false,
+  "editor.semanticHighlighting.enabled": true,
+  "editor.renderWhitespace": "none",
+  "editor.bracketPairColorization.independentColorPoolPerBracketType": true,
+  "editor.fontWeight": "normal",
+  "editor.autoClosingDelete": "never",
+  "editor.autoClosingOvertype": "never",
+  "editor.lineNumbers": "relative",
+  "editor.useTabStops": false,
+  "editor.inlayHints.enabled": "off",
+  "editor.wordWrap": "off",
+  "editor.guides.indentation": false,
+  "editor.guides.bracketPairs": false,
+  "editor.cursorSurroundingLines": 1000,
+
+  // Vim
+  "vim.smartRelativeLine": true,
+  "vim.useSystemClipboard": true,
+  "vim.easymotion": true,
+  "vim.incsearch": true,
+  "vim.hlsearch": true,
+  "vim.useCtrlKeys": false,
+  "vim.insertModeKeyBindings": [
+    {
+      "before": [
+        "j",
+        "j"
+      ],
+      "after": [
+        "<Esc>"
+      ]
+    }
+  ],
+  "vim.leader": "<space>",
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false
+  },
+  "vim.visualModeKeyBindingsNonRecursive": [
+    {
+      "before": [
+        ">"
+      ],
+      "commands": [
+        "editor.action.indentLines"
+      ]
+    },
+    {
+      "before": [
+        "<"
+      ],
+      "commands": [
+        "editor.action.outdentLines"
+      ]
+    },
+    {
+      "before": [
+        "p"
+      ],
+      "after": [
+        "p",
+        "g",
+        "v",
+        "y"
+      ]
+    }
+  ],
+  "vim.statusBarColorControl": false,
+  /*
+  "vim.statusBarColors.normal": [
+    "#B48EAD",
+    "#000"
+  ],
+  "vim.statusBarColors.insert": [
+    "#A3BE8C",
+    "#000"
+  ],
+  "vim.statusBarColors.visual": [
+    "#B48EAD",
+    "#000"
+  ],
+  "vim.statusBarColors.visualline": [
+    "#B48EAD",
+    "#000"
+  ],
+  "vim.statusBarColors.visualblock": [
+    "#A3BE8C",
+    "#000"
+  ],
+  */
+
+  //"vim.statusBarColors.replace": "#D08770",
+  //"vim.statusBarColors.commandlineinprogress": "#007ACC",
+  //"vim.statusBarColors.searchinprogressmode": "#007ACC",
+  //"vim.statusBarColors.easymotionmode": "#007ACC",
+  //"vim.statusBarColors.easymotioninputmode": "#007ACC",
+  //"vim.statusBarColors.surroundinputmode": "#007ACC",
+
+  // Roblox LSP
+  "robloxLsp.completion.endAutocompletion": true,
+  "robloxLsp.completion.deprecatedMembers": true,
+  "robloxLsp.workspace.maxPreload": 1,
+  "robloxLsp.diagnostics.workspaceRate": 1,
+  "robloxLsp.color.mode": "Grammar",
+  "robloxLsp.completion.workspaceWord": false,
+  "robloxLsp.workspace.useFilesExclude": false,
+  "robloxLsp.diagnostics.enable": false,
+  "robloxLsp.completion.enable": false,
+  "robloxLsp.diagnostics.neededFileStatus": {
+    "Opened": true
+  },
+
+  // Git
+  "git.autofetch": true,
+  "git.enableSmartCommit": true,
+
+  // Security
+  "security.workspace.trust.untrustedFiles": "open",
+  "security.workspace.trust.banner": "never",
+  "security.workspace.trust.enabled": false,
+  "security.workspace.trust.emptyWindow": false,
+
+  // Other
+  "files.autoSave": "onFocusChange",
+
+  // Powermode
+  "powermode.enabled": true,
+  "powermode.combo.counterEnabled": "show",
+  "powermode.combo.counterSize": 2,
+  "powermode.combo.location": "statusbar",
+  "powermode.shake.enabled": false,
+  "powermode.explosions.enabled": false,
+  "powermode.shake.intensity": 0,
+
+  "cmake.pinnedCommands": [
+    "workbench.action.tasks.configureTaskRunner",
+    "workbench.action.tasks.runTask"
+  ],
+  "chat.commandCenter.enabled": false,
+  "workbench.navigationControl.enabled": false,
+  "workbench.colorTheme": "Material Theme Ocean High Contrast",
+  "window.commandCenter": false,
+  "window.menuBarVisibility": "compact",
+  "editor.overtypeCursorStyle": "line",
+  "workbench.editor.enablePreview": false,
+
+  "breadcrumbs.enabled": true,
+  "breadcrumbs.icons": true,
+  "breadcrumbs.symbolPath": "true",
+  "workbench.iconTheme": "eq-material-theme-icons-ocean",
+  "workbench.activityBar.location": "top",
+  "breadcrumbs.filePath": "off",
+  "explorer.confirmDragAndDrop": false,
+  "codeium.enableCodeLens": false,
+  "workbench.panel.showLabels": false,
+  "glassit.alpha": 220,
+  "workbench.sideBar.location": "right"
+}

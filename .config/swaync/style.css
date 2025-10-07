@@ -1,0 +1,267 @@
+
+@define-color dark-bg      #282828;  /* bg */
+@define-color darker-bg    #3c3836;  /* bg1 */
+@define-color darkest-bg   #1d2021;  /* bg0_h */
+@define-color hover-bg     #665c54;  /* bg3 */
+@define-color light-cream  #fbf1c7;  /* fg0 */
+@define-color cream        #ebdbb2;  /* fg / fg1 */
+@define-color gray         #a89984;  /* gray */
+@define-color green        #98971a;  /* green */
+@define-color red          #cc241d;  /* red */
+@define-color bright-red   #fb4934;  /* red_bright */
+@define-color blue         #458588;  /* blue */
+@define-color yellow       #d79921;  /* yellow */
+@define-color orange       #d65d0e;  /* orange */
+
+* {
+  font-family: "JetBrainsMono Nerd Font";
+  font-weight: bold;
+  border-radius: 0;
+}
+
+/* Control Center */
+.control-center {
+  background: @dark-bg;
+  border: 2px solid @darker-bg;
+}
+
+/* Notification rows */
+.control-center .notification-row:focus,
+.control-center .notification-row:hover {
+  background: @darker-bg;
+}
+
+.notification-row {
+  outline: none;
+  margin: 0;
+  padding: 0;
+}
+
+.notification,
+.notification-content,
+.notification-action,
+.notification-default-action,
+.inline-reply-entry,
+.inline-reply-button,
+.widget-title,
+.widget-title>button,
+.widget-dnd,
+.widget-dnd>switch,
+.widget-dnd>switch slider,
+.widget-label>label,
+.widget-buttons-grid,
+.widget-buttons-grid>flowbox>flowboxchild>button,
+.widget-volume,
+.widget-backlight,
+.widget-mpris,
+.widget-mpris>box>button,
+.widget-mpris-player,
+.widget-mpris-album-art {
+  border-radius: 0;
+}
+
+/* Notifications */
+.notification {
+  background: @dark-bg;
+  border: 2px solid @darker-bg;
+  margin: 0px;
+}
+
+.close-button {
+  background: @red;
+  color: @dark-bg;
+  text-shadow: none;
+  padding: 0;
+  margin-top: 5px;
+  margin-right: 5px;
+  border-radius: 0;
+  border: none;
+}
+
+.close-button:hover {
+  background: @bright-red;
+}
+
+.notification-action {
+  border: 2px solid @orange;
+  border-top: none;
+}
+
+.notification-default-action:hover,
+.notification-action:hover {
+  color: @cream;
+  background: @dark-bg;
+}
+
+.inline-reply-entry {
+  background: @darker-bg;
+  color: @cream;
+  caret-color: @cream;
+  border: 1px solid @gray;
+}
+
+.inline-reply-button {
+  margin-top: 4px;
+  margin-left: 4px;
+  background: @darkest-bg;
+  border: 1px solid @gray;
+  color: @cream;
+}
+
+.inline-reply-button:disabled {
+  background: @darkest-bg;
+  color: @gray;
+  border: 1px solid @gray;
+}
+
+.inline-reply-button:hover {
+  background: @hover-bg;
+}
+
+.summary {
+  font-size: 16px;
+  color: @orange;
+}
+
+.time {
+  font-size: 16px;
+  color: @cream;
+  margin-right: 24px;
+}
+
+.body {
+  padding-top: 3px;
+  font-size: 14px;
+  color: @cream;
+}
+
+/* Widgets */
+.widget-title {
+  color: @orange;
+  background: @darker-bg;
+  padding: 5px 10px;
+  margin: 10px;
+  font-size: 1.5rem;
+}
+
+.widget-title>button {
+  font-size: 1rem;
+  color: @cream;
+  background: @darkest-bg;
+}
+
+.widget-title>button:hover {
+  background: @red;
+  color: @dark-bg;
+}
+
+.widget-dnd {
+  background: @darker-bg;
+  padding: 5px 10px;
+  margin: 5px 10px;
+  font-size: large;
+  color: @blue;
+}
+
+.widget-dnd>switch {
+  background: @blue;
+  border-radius: 0;
+}
+
+.widget-dnd>switch:checked {
+  background: @yellow;
+  border: solid @yellow;
+}
+
+.widget-label>label {
+  font-size: 1rem;
+  color: @cream;
+  margin: 10px;
+}
+
+.widget-buttons-grid {
+  font-size: x-large;
+  padding: 5px;
+  margin: 10px;
+  background: @darker-bg;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button {
+  margin: 3px;
+  background: @dark-bg;
+  color: @cream;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:hover {
+  background: @yellow;
+  color: @dark-bg;
+}
+
+.widget-buttons-grid>flowbox>flowboxchild>button:checked {
+  background: @orange;
+  color: @dark-bg;
+}
+
+.widget-volume,
+.widget-backlight {
+  background: @darker-bg;
+  padding: 5px;
+  margin: 5px 10px;
+  font-size: 2rem;
+  color: @orange;
+}
+
+/* Sliders */
+.widget-volume scale,
+.widget-backlight scale {
+  min-height: 8px;
+}
+
+.widget-volume scale trough,
+.widget-backlight scale trough {
+  min-height: 8px;
+  border-radius: 0;
+  background: @darkest-bg;
+  border: 1px solid @gray;
+}
+
+.widget-volume scale highlight,
+.widget-backlight scale highlight {
+  min-height: 8px;
+  border-radius: 0;
+  background: @orange;
+  border: none;
+}
+
+.widget-volume scale slider,
+.widget-backlight scale slider {
+  min-width: 10px;
+  min-height: 10px;
+  border-radius: 0;
+  background: @orange;
+  border: 2px solid @orange;
+}
+
+.widget-mpris {
+  color: @cream;
+  background: @darker-bg;
+  padding: 5px 10px;
+  margin: 5px 10px;
+}
+
+.widget-mpris>box>button,
+.widget-mpris-player,
+.widget-mpris-album-art {
+  border-radius: 0;
+  box-shadow: none;
+  padding: 5px 10px;
+  margin: 10px 0 0 0;
+}
+
+progress, trough {
+  background-color: @darkest-bg;
+}
+
+progressbar > trough > progress {
+  background-color: @orange;
+}

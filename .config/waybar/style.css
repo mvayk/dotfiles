@@ -1,0 +1,134 @@
+/* style.css */
+* {
+  font-size: 14px;
+  border: none;
+  border-radius: 0;
+  font-family: SpaceMono Nerd Font;
+  font-weight: bold;
+  padding: 0;
+  margin: 0;
+}
+
+#waybar {
+  color: #d4be98;
+  background: rgba(50, 48, 47, 1);
+}
+
+#workspaces button {
+  color: #d4be98;
+  background: #3c3836;
+  border-left: 0;
+  padding: 0 5px;
+}
+
+#workspaces button.visible {
+  color: #d4be98;
+  background: #3c3836;
+}
+
+#workspaces button.active {
+  color: #fabd2f;   /* your desired green */
+  background: #3c3836;
+}
+
+#workspaces button.urgent {
+  color: #3c3836;
+  background: #ea6962;
+}
+
+/*
+ * Arrows
+ */
+#custom-arrow-light-on-bg-left {
+  font-size: 17px;
+  color: #3c3836;
+  background: transparent;
+}
+
+#custom-arrow-light-on-bg-right {
+  font-size: 17px;
+  color: #3c3836;
+  background: transparent;
+}
+
+#custom-arrow-light-on-dark-left,
+#custom-arrow-light-on-dark-right {
+  font-size: 17px;
+  color: #3c3836;
+  background: #32302f;
+}
+
+#custom-arrow-dark-on-light-left,
+#custom-arrow-dark-on-light-right {
+  font-size: 17px;
+  color: #32302f;
+  background: #3c3836;
+}
+
+/*
+ * General background
+ */
+#network,
+#memory,
+#backlight,
+#language,
+#tray,
+#custom-weather {
+  background: #32302f;
+  padding: 0 3 0 3;
+}
+
+#cpu,
+#pulseaudio,
+#temperature,
+#battery,
+#custom-notification {
+  background: #3c3836;
+  padding: 0 3 0 3;
+}
+#clock {
+    background: #3c3836;
+}
+
+/*
+ * Warning plugins state
+ */
+#memory.warning,
+#cpu.warning,
+#battery.warning {
+  color: #d8a657;
+}
+
+/*
+ * Critical plugins state
+ */
+#cpu.critical,
+#temperature.critical,
+#memory.critical,
+#battery.critical,
+#network.disconnected {
+  color: #ea6962;
+}
+
+#mode {
+  color: #32302f;
+  background: #ea6962;
+}
+
+#battery.charging {
+  color: #a9b665;
+}
+
+#battery.plugged {
+  color: #7daea3;
+}
+
+#pulseaudio.bluetooth {
+  color: #7daea3;
+}
+
+tooltip {
+  background: #32302f;
+  border: 1px solid #252423;
+}
+

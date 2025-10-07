@@ -1,0 +1,101 @@
+/* ======================================================== */
+/* Gruvbox Dark Soft Palette */
+/* ======================================================== */
+@define-color bg        #32302f;
+@define-color fg        #ebdbb2;
+@define-color muted     #928374;
+
+@define-color red       #cc241d;
+@define-color orange    #d65d0e;
+@define-color yellow    #d79921;
+@define-color green     #98971a;
+@define-color aqua      #689d6a;
+@define-color blue      #458588;
+@define-color purple    #b16286;
+@define-color gray      #a89984;
+
+/* ======================================================== */
+/* Window Styling */
+/* ======================================================== */
+window {
+  font-family: SpaceMono Nerd Font;
+  font-size: 0pt;
+  color: #ebdbb2;        /* fg */
+  background-color: #32302f; /* bg, fully opaque */
+}
+
+button {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 50%;
+  border-style: solid;
+  border-width: 2px;
+  border-color: #ebdbb2; /* fg */
+  background-color: #282828; /* darker gray for buttons */
+  margin: 10px;
+  transition:
+    box-shadow 0.3s ease-in-out,
+    background-color 0.3s ease-in-out,
+    color 0.3s ease-in-out;
+}
+
+button:hover {
+  background-color: #98971a; /* green */
+  color: #32302f;            /* bg */
+}
+
+button:focus {
+  background-color: #ebdbb2; /* fg */
+  color: #32302f;             /* bg */
+}
+
+/* ======================================================== */
+/* Buttons with Icons */
+/* ======================================================== */
+#lock {
+  background-image: url("./lock.png");
+}
+#lock:focus,
+#lock:hover {
+  background-image: url("./lock-hover.png");
+}
+
+#logout {
+  background-image: url("./logout.png");
+}
+#logout:focus,
+#logout:hover {
+  background-image: url("./logout-hover.png");
+}
+
+#suspend {
+  background-image: url("./sleep.png");
+}
+#suspend:focus,
+#suspend:hover {
+  background-image: url("./sleep-hover.png");
+}
+
+#shutdown {
+  background-image: url("./power.png");
+}
+#shutdown:focus,
+#shutdown:hover {
+  background-image: url("./power-hover.png");
+}
+
+#reboot {
+  background-image: url("./restart.png");
+}
+#reboot:focus,
+#reboot:hover {
+  background-image: url("./restart-hover.png");
+}
+
+#windows {
+  background-image: url("./windows.png");
+}
+#windows:focus,
+#windows:hover {
+  background-image: url("./windows-hover.png");
+}

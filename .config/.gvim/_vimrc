@@ -1,0 +1,94 @@
+" Vim with all enhancements
+"source $VIMRUNTIME/vimrc_example.vim
+
+set number
+set relativenumber
+if has("gui_running")
+    set guifont=Courier:h19:b:cANSI:qDRAFT
+endif
+
+set expandtab
+set tabstop=4
+set shiftwidth=4
+set backspace=indent,eol,start
+
+set guicursor=n-v-c-sm:block,i-ci-ve:block,r-cr-o:block
+colorscheme morning
+
+set scrolloff=129000
+set nowrap
+
+set clipboard=unnamedplus
+nnoremap y "+y
+vnoremap y "+y
+nnoremap Y "+Y
+
+nnoremap p "+p
+nnoremap P "+P
+vnoremap p "+p
+vnoremap P "+P
+
+" i didnt know gvim could do this?
+call plug#begin('C:\Program Files\Vim\plugged')
+Plug 'jiangmiao/auto-pairs'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'airblade/vim-rooter'
+Plug 'vimsence/vimsence'
+call plug#end()
+
+let mapleader = "\<Space>"
+
+nnoremap <Leader>h :nohlsearch<CR>
+
+nnoremap <C-t> :NERDTreeToggle<CR>
+nnoremap <leader>n :NERDTreeFocus<CR>
+nnoremap <C-n> :bnext<CR>
+nnoremap <C-p> :bprev<CR>
+
+let g:ctrlp_map = ''
+nnoremap <Leader>ff :CtrlP<CR>
+let g:ctrlp_show_hidden = 1
+let g:ctrlp_working_path_mode = 'r'
+let g:ctrlp_custom_ignore = {
+      \ 'dir':  '\v[\/](\.git|node_modules|\(badname\))$',
+      \ 'file': '\v\.(exe|dll|log)$'
+      \ }
+
+
+" Use the internal diff if available.
+" Otherwise use the special 'diffexpr' for Windows.
+if &diffopt !~# 'internal'
+  set diffexpr=MyDiff()
+endif
+function MyDiff()
+  let opt = '-a --binary '
+  if &diffopt =~ 'icase' | let opt = opt . '-i ' | endif
+  if &diffopt =~ 'iwhite' | let opt = opt . '-b ' | endif
+  let arg1 = v:fname_in
+  if arg1 =~ ' ' | let arg1 = '"' . arg1 . '"' | endif
+  let arg1 = substitute(arg1, '!', '\!', 'g')
+  let arg2 = v:fname_new
+  if arg2 =~ ' ' | let arg2 = '"' . arg2 . '"' | endif
+  let arg2 = substitute(arg2, '!', '\!', 'g')
+  let arg3 = v:fname_out
+  if arg3 =~ ' ' | let arg3 = '"' . arg3 . '"' | endif
+  let arg3 = substitute(arg3, '!', '\!', 'g')
+  if $VIMRUNTIME =~ ' '
+    if &sh =~ '\<cmd'
+      if empty(&shellxquote)
+        let l:shxq_sav = ''
+        set shellxquote&
+      endif
+      let cmd = '"' . $VIMRUNTIME . '\diff"'
+    else
+      let cmd = substitute($VIMRUNTIME, ' ', '" ', '') . '\diff"'
+    endif
+  else
+    let cmd = $VIMRUNTIME . '\diff'
+  endif
+  let cmd = substitute(cmd, '!', '\!', 'g')
+  silent execute '!' . cmd . ' ' . opt . arg1 . ' ' . arg2 . ' > ' . arg3
+  if exists('l:shxq_sav')
+    let &shellxquote=l:shxq_sav
+  endif
+endfunction

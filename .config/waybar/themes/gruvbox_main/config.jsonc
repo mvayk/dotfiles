@@ -1,0 +1,264 @@
+/* config.jsonc */
+
+{
+  "layer": "top",
+  "position": "top",
+  "height": 12,
+  "modules-left": [
+    "custom/empty",
+    "custom/arrow-dark-on-light-right",
+    "hyprland/workspaces",
+    "custom/arrow-light-on-bg-right",
+    "custom/arrow-dark-on-light-right",
+    "custom/arrow-light-on-bg-right"
+  ],
+  "modules-center": [
+      "custom/arrow-light-on-bg-left",
+      "custom/arrow-dark-on-light-left",
+      "custom/arrow-light-on-bg-left",
+      "clock",
+      "custom/arrow-light-on-bg-right",
+      "custom/arrow-dark-on-light-right",
+      "custom/arrow-light-on-bg-right",
+  ],
+  "modules-right": [
+      "custom/arrow-light-on-bg-left",
+      "custom/arrow-dark-on-light-left",
+      "custom/arrow-light-on-bg-left",
+    /* "custom/arrow-light-on-bg-left", */
+    "pulseaudio",
+    "custom/arrow-dark-on-light-left",
+    "network",
+    "custom/arrow-light-on-dark-left",
+    "cpu",
+    "custom/arrow-dark-on-light-left",
+    "memory",
+    "custom/arrow-light-on-dark-left",
+    "temperature",
+    "custom/arrow-dark-on-light-left",
+    "backlight",
+    "custom/arrow-light-on-dark-left",
+    "battery#bat1",
+    "battery#bat2",
+    "custom/arrow-dark-on-light-left",
+    "sway/language",
+    "custom/arrow-light-on-dark-left",
+    "custom/notification",
+    "custom/arrow-dark-on-light-left",
+    "tray"
+  ],
+
+  "sway/workspaces": {
+    "disable-scroll": true
+  },
+
+  "custom/weather": {
+    "format": "| {}°",
+    "tooltip": true,
+    "interval": 3600,
+    "exec": "wttrbar --location Sydney",
+    "return-type": "json"
+  },
+
+  "sway/mode": {
+    "format": "<span style='italic'>{}</span>",
+    "tooltip": false
+  },
+
+  "clock": {
+    "format": " {:%H:%M}",
+    "format-alt": "{:%A, %d %b, %Y}",
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+      "mode": "month",
+      "mode-mon-col": 3,
+      "weeks-pos": "left",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#d4be98'><b>{}</b></span>",
+        "days": "<span color='#d4be98'><b>{}</b></span>",
+        "weeks": "<span color='#a9b665'><b>W{}</b></span>",
+        "weekdays": "<span color='#d8a657'><b>{}</b></span>",
+        "today": "<span color='#e78a4e'><b><u>{}</u></b></span>"
+      }
+    },
+    "actions": {
+      "on-click-middle": "mode",
+      "on-scroll-up": "shift_up",
+      "on-scroll-down": "shift_down",
+    },
+  },
+
+  "pulseaudio": {
+    "scroll-step": 1,
+    "format": "{volume}% {icon} {format_source}",
+    "format-bluetooth": "{volume}% {icon} {format_source}",
+    "format-bluetooth-muted": "<span foreground='#ea6962'>  {format_source}</span>",
+    "format-muted": "<span foreground='#ea6962'> </span> {format_source}",
+    "format-source": " ",
+    "format-source-muted": " <span foreground='#ea6962'></span>",
+    "format-icons": {
+      "headphone": " ",
+      "headset": " ",
+      "default": ["", "", ""]
+    },
+    "tooltip": false,
+    "on-click": "pavucontrol",
+  },
+
+  "network": {
+    "format-wifi": " ",
+    "format-ethernet": " ",
+    "format-linked": " ",
+    "format-disconnected": "⚠ ",
+    "tooltip-format": "{essid}\n{ipaddr}/{cidr}",
+    "tooltip": true,
+  },
+
+  "cpu": {
+    "format": "{usage}%  ",
+    "states": {
+      "warning": 60,
+      "critical": 80
+    },
+    "tooltip": false,
+    "on-click": "alacritty -e btop"
+  },
+
+  "memory": {
+    "tooltip": true,
+    "format": "{}% ",
+    "states": {
+      "warning": 60,
+      "critical": 80
+    },
+    "tooltip-format": "RAM: {used}GB/{total}GB\nSwap: {swapUsed}GB/{swapAvail}GB",
+  },
+
+  "temperature": {
+    "tooltip": false,
+    "critical-threshold": 80,
+    "format": "{temperatureC}°{icon}",
+    "format-icons": [" ", "", " "]
+  },
+
+  "backlight": {
+    "tooltip": false,
+    "format": "{percent}% {icon}",
+    "format-icons": ["󰃞 ", "󰃟 ", "󰃠 "]
+  },
+
+  "battery#bat1": {
+      "bat": "BAT0",
+      "adapter": "AC",
+      "interval": 10,
+      "full-at": 99,
+      "states": {
+          "full": 100,
+          "good": 99,
+          "empty": 5
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-empty": " {capacity}%",
+      "format-full": " {capacity}%",
+      "format-icons": [
+          "", 
+          "",  
+          "",  
+          "",  
+          ""   
+      ]
+  },
+
+  "battery#bat2": {
+      "bat": "BAT1",
+      "adapter": "AC",
+      "interval": 10,
+      "full-at": 99,
+      "states": {
+          "full": 100,
+          "good": 99,
+          "empty": 5
+      },
+      "format": "{icon} {capacity}%",
+      "format-charging": " {capacity}%",
+      "format-plugged": " {capacity}%",
+      "format-empty": " {capacity}%",
+      "format-full": " {capacity}%",
+      "format-icons": [
+          "", 
+          "",  
+          "", 
+          "",  
+          ""  
+      ]
+  },
+
+  "sway/language": {
+    "format": "{shortDescription}",
+    "tooltip": false
+  },
+
+  "custom/notification": {
+    "tooltip": false,
+    "format": "{icon}",
+    "format-icons": {
+      "notification": " ",
+      "none": " ",
+      "dnd-notification": "<span foreground='#ea6962'></span>",
+      "dnd-none": "<span foreground='#ea6962'> </span>",
+      "inhibited-notification": " ",
+      "inhibited-none": " ",
+      "dnd-inhibited-notification": "<span foreground='#ea6962'> </span>",
+      "dnd-inhibited-none": "<span foreground='#ea6962'> </span>"
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true
+  },
+
+  "tray": {
+    "tooltip": false,
+    "spacing": 5
+  },
+
+  "custom/arrow-light-on-bg-left": {
+    "tooltip": false,
+    "format": ""
+  },
+
+  "custom/arrow-dark-on-light-left": {
+    "tooltip": false,
+    "format": ""
+  },
+
+  "custom/arrow-light-on-dark-left": {
+    "tooltip": false,
+    "format": ""
+  },
+  "custom/empty": {
+    "tooltip": false,
+    "format": " "
+  },
+
+  "custom/arrow-light-on-bg-right": {
+    "tooltip": false,
+    "format": ""
+  },
+
+  "custom/arrow-dark-on-light-right": {
+    "tooltip": false,
+    "format": ""
+  },
+
+  "custom/arrow-light-on-dark-right": {
+    "tooltip": false,
+    "format": ""
+  }
+}
+

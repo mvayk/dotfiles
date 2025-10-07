@@ -1,0 +1,18 @@
+command = /usr/bin/zsh -c tmux
+font-family = "Iosevka Nerd Font"
+font-style = Regular
+font-size = 13
+
+cursor-style = block
+cursor-style-blink = true
+
+window-theme = system
+gtk-titlebar = false
+window-decoration = false
+gtk-wide-tabs = false
+
+bell-features = false
+shell-integration = zsh
+shell-integration-features = no-cursor
+confirm-close-surface = false
+clipboard-paste-protection = false

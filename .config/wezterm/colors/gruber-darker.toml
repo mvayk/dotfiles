@@ -1,0 +1,40 @@
+# Gruber Dark (WezTerm)
+# Author: ring0-rootkit
+# License: MIT
+# Original: https://github.com/ring0-rootkit/gruber-darker-kitty/blob/main/gruber.conf
+
+[colors]
+foreground = "#e4e4e4"
+background = "#181818"
+cursor_bg = "#FFDD33"
+cursor_fg = "#000000"
+cursor_border = "#FFDD33"
+selection_fg = "#181818"
+selection_bg = "#F5F5F5"
+ansi = [
+  "#101010", # black
+  "#F43841", # red
+  "#73D936", # green
+  "#FFDD33", # yellow
+  "#96A6C8", # blue
+  "#9E95C7", # magenta
+  "#95A99F", # cyan
+  "#E4E4E4"  # white
+]
+brights = [
+  "#453D41", # bright black
+  "#F43841", # bright red
+  "#73D936", # bright green
+  "#FFDD33", # bright yellow
+  "#96A6C8", # bright blue
+  "#9E95C7", # bright magenta
+  "#95A99F", # bright cyan
+  "#FFFFFF"  # bright white
+]
+
+[metadata]
+name = "Gruber Dark"
+author = "ring0-rootkit"
+license = "MIT"
+upstream = "https://github.com/ring0-rootkit/gruber-darker-kitty/blob/main/gruber.conf"
+
