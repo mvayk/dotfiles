@@ -23,7 +23,7 @@ font pango:Space Mono Nerd Font 10
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id polybar example
-exec --no-startup-id sleep 1 && feh --bg-fill ~/wallpapers/zge85fc9j0g11.jpg
+exec --no-startup-id sleep 1 && feh --bg-fill ~/wallpapers/PixelartCityscape.png
 exec --no-startup-id xset m 0/1 0
 bindsym Home exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
@@ -98,10 +98,10 @@ bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+s split h
+bindsym $mod+Shift++s split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $mod+Shift+v split v
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -117,7 +117,7 @@ bindsym $mod+w layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $mod+v floating toggle
 
 # change focus between tiling / floating windows
 bindsym $mod+space focus mode_toggle
