@@ -12,10 +12,10 @@ configuration {
 @theme "/dev/null"
 
 * {
-    bg:       #000000;
-    fg:       #FFFFFF;
-    accent:   #282828;
-    button:   #282828;
+    bg:       #282828;
+    fg:       #ebdbb2;
+    accent:   #928374;
+    button:   #3c3836;
 
     background-color: @bg;
     text-color:       @fg;
@@ -31,7 +31,7 @@ window {
 prompt {
     background-color: @button;
     enabled:         true;
-    padding:         3px 12px;   /* tighter padding */
+    padding:         2px 6px;   /* tighter padding */
     font:            "SpaceMono Nerd Font 10";
     font-weight:     bold;
 }
@@ -64,7 +64,7 @@ listview {
 
 mainbox {
     children: [ inputbar, listview ];
-    spacing:  2px;       /* no extra spacing between sections */
+    spacing:  0px;       /* no extra spacing between sections */
     padding:  2px 2px 2px 2px;
 }
 
