@@ -23,7 +23,7 @@ font pango:Space Mono Nerd Font 10
 # https://wiki.archlinux.org/index.php/XDG_Autostart
 exec --no-startup-id dex --autostart --environment i3
 exec_always --no-startup-id polybar example
-exec --no-startup-id sleep 1 && feh --bg-fill ~/wallpapers/PixelartCityscape.png
+exec --no-startup-id sleep 1 && feh --bg-fill ~/wallpapers/Leaves.png
 exec --no-startup-id xset m 0/1 0
 bindsym Home exec --no-startup-id pactl set-source-mute @DEFAULT_SOURCE@ toggle
 # The combination of xss-lock, nm-applet and pactl is a popular choice, so
