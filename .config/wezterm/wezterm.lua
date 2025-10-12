@@ -6,7 +6,7 @@ config.default_prog = { '/usr/bin/zsh', '-c', 'tmux' }
 config.font = wezterm.font_with_fallback {
   { family = 'Iosevka Nerd Font', weight = 'Regular' },
 }
-config.font_size = 18.0
+config.font_size = 17.0
 --config.color_scheme = 'Google (dark) (terminal.sexy)'
 config.color_scheme = "Gruber Dark"
 

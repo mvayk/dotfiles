@@ -600,6 +600,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq lsp-ui-sideline-enable t)
   (setq lsp-ui-sideline-show-hover t)
 
+  (setq org-startup-indented t)
+
   ;; Better peek features
   (setq lsp-ui-peek-enable t)
   (setq lsp-ui-peek-always-show t)
