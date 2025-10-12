@@ -8,7 +8,7 @@ config.font = wezterm.font_with_fallback {
 }
 config.font_size = 17.0
 --config.color_scheme = 'Google (dark) (terminal.sexy)'
-config.color_scheme = "Gruber Dark"
+--config.color_scheme = "Gruber Dark"
 
 config.default_cursor_style = 'BlinkingBlock'
 config.cursor_blink_rate = 5000
