@@ -1,7 +1,7 @@
 @theme "~/.cache/wal/colors-rofi-dark.rasi"
 
 * {
-    font: "JetBrainsMono Nerd Font 13";
+    font: "Iosevka Nerd Font 13";
     font-weight: bold;
     background: #0000004D;
     foreground: #FFFFFF;

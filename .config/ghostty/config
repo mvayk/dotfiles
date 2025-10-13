@@ -5,7 +5,7 @@
 # path since Ghostty couldn't find any existing config files on your system:
 #
 #   /home/mvayk/.config/ghostty/config
-#config-file = ~/.cache/wal/ghostty.conf
+config-file = ~/.cache/wal/ghostty.conf
 
 # The template does not set any default options, since Ghostty ships
 # with sensible defaults for all options. Users should only need to set
