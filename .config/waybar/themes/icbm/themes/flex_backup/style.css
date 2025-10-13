@@ -1,21 +1,17 @@
-@import url('file:///home/mvayk/.cache/wal/colors-waybar.css');
-
 * {
   border: none;
   border-radius: 0;
-  font-family: JetBrainsMono Nerd Font;
+  font-family: Space Mono Nerd Font;
   font-weight: bold;
   font-size: 13px;
   color: #FFFFFF;
 }
 
 window#waybar {
-  background: rgba(0,0,0,1);
+  background: rgba(0,0,0,0.7);
   transition-property: background-color;
   transition-duration: 0.5s;
   border-radius: 0;
-  margin: 2px;
-  border: 1px solid @color10;
 }
 
 #workspaces button {
@@ -24,12 +20,12 @@ window#waybar {
 }
 
 #workspaces button:hover {
-  background: rgba(0,0,0, 0.4)
+  background: rgba(255,255,255, 0.4)
 }
 
 #workspaces button.active {
+  background: #000000;
   color: #FFFFFF;
-  background: transparent;
 }
 
 #clock,

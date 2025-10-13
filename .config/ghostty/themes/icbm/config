@@ -23,7 +23,7 @@
 # # separated by equals signs.
 command = tmux
 #font-family = ComicShannsMono Nerd Font
-font-family = Iosevka Nerd Font
+font-family = JetBrainsMono Nerd Font
 confirm-close-surface = false
 font-size = 14
 background-opacity = 0.8
@@ -36,7 +36,6 @@ cursor-style-blink = true
 shell-integration-features = no-cursor
 
 title = "ghostty"
-keybind = ctrl+backspace=text:\x1b\x7f
 
 #background = 000000
 # window-padding-x = 2
