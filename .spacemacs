@@ -76,6 +76,7 @@ This function should only modify configuration layer settings."
    ;; Also include the dependencies as they will not be resolved automatically.
    dotspacemacs-additional-packages '(
                                       centered-cursor-mode
+                                      org-roam
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -194,7 +195,6 @@ It should only modify the values of Spacemacs settings."
    ;; This has no effect in terminal or if "nerd-icons" package or the font
    ;; is not installed. (default nil)
    dotspacemacs-startup-buffer-show-icons nil
-
    ;; Default major mode for a new empty buffer. Possible values are mode
    ;; names such as `text-mode'; and `nil' to use Fundamental mode.
    ;; (default `text-mode')
@@ -221,7 +221,8 @@ It should only modify the values of Spacemacs settings."
    ;; package can be defined with `:package', or a theme can be defined with
    ;; `:location' to download the theme package, refer the themes section in
    ;; DOCUMENTATION.org for the full theme specifications.
-   dotspacemacs-themes '(spacemacs-dark
+   dotspacemacs-themes '(doom-gruvbox
+                         spacemacs-dark
                          spacemacs-light
                          )
 
@@ -411,7 +412,7 @@ It should only modify the values of Spacemacs settings."
 
    ;; Show the scroll bar while scrolling. The auto hide time can be configured
    ;; by setting this variable to a number. (default t)
-   dotspacemacs-scroll-bar-while-scrolling t
+   dotspacemacs-scroll-bar-while-scrolling nil
 
    ;; Control line numbers activation.
    ;; If set to `t', `relative' or `visual' then line numbers are enabled in all
@@ -581,7 +582,24 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   Put your configuration code here, except for variables that should be set
   before packages are loaded."
   (global-company-mode)
+                                        ; (global-centered-cursor-mode t)
   (global-centered-cursor-mode t)
+  (global-visual-line-mode -1)
+  (setq-default truncate-lines t)
+
+
+  ;; Fix scroll wheel compatibility
+  (setq ccm-recenter-at-end-of-file t)
+  (setq ccm-ignored-commands '(mouse-drag-region
+                               mouse-set-point
+                               widget-button-click
+                               scroll-bar-toolkit-scroll
+                               evil-mouse-drag-region
+                               mwheel-scroll))
+
+                                        ; (setq centered-cursor-mode-disable-on-scroll t)
+                                        ;(setq scroll-preserve-screen-position t)
+                                        ;(setq scroll-conservatively 100000001)
 
   (setq lsp-headerline-breadcrumb-enable nil)
   (setq-default evil-ex-search-persistent-highlight nil)
@@ -608,6 +626,7 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq company-minimum-prefix-length 1)
   (setq company-idle-delay 0.0)
   (setq company-show-numbers t)
+
   )
 
 
@@ -624,7 +643,38 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(custom-safe-themes
-     '("a9b47677ddcb6c1d17015d0c8007ca2af8a20ad4d4700bda75bf454afaad073b"
+     '("f1e8339b04aef8f145dd4782d03499d9d716fdc0361319411ac2efc603249326"
+       "e8bd9bbf6506afca133125b0be48b1f033b1c8647c628652ab7a2fe065c10ef0"
+       "3f24dd8f542f4aa8186a41d5770eb383f446d7228cd7a3413b9f5e0ec0d5f3c0"
+       "aec7b55f2a13307a55517fdf08438863d694550565dee23181d2ebd973ebd6b8"
+       "915ad655a1dd15966d7edde92238997bae06d75aebf88c64d9a1df3257133078"
+       "18a1d83b4e16993189749494d75e6adb0e15452c80c431aca4a867bcc8890ca9"
+       "5244ba0273a952a536e07abaad1fdf7c90d7ebb3647f36269c23bfd1cf20b0b8"
+       "5c7720c63b729140ed88cf35413f36c728ab7c70f8cd8422d9ee1cedeb618de5"
+       "0592f1b03ba5d7d8cfade2ce3a23db4c0d5f9926c9ae918dd740739dd95b697c"
+       "7fea145741b3ca719ae45e6533ad1f49b2a43bf199d9afaee5b6135fd9e6f9b8"
+       "f253a920e076213277eb4cbbdf3ef2062e018016018a941df6931b995c6ff6f6"
+       "b99ff6bfa13f0273ff8d0d0fd17cc44fab71dfdc293c7a8528280e690f084ef0"
+       "bb0f3ae2f6f6f6dbbbe03df66d74ca0aecefa6723ac1686f421dd1ffe26b71c3"
+       "3061706fa92759264751c64950df09b285e3a2d3a9db771e99bcbb2f9b470037"
+       "f5f070872db3e4d8b82dbb2f3b1c60beca86fc93327a38ebddd22070458a14bc"
+       "2f8af2a3a2fae6b6ea254e7aab6f3a8b5c936428b67869cef647c5f8e7985877"
+       "39cb0376bfc26ca69c42b8410cb8e97bc6e72a6da53b4f1268de9bd1b347b9f3"
+       "a9eeab09d61fef94084a95f82557e147d9630fbbb82a837f971f83e66e21e5ad"
+       "cab317d0125d7aab145bc7ee03a1e16804d5abdfa2aa8738198ac30dc5f7b569"
+       "4c16a8be2f20a68f0b63979722676a176c4f77e2216cc8fe0ea200f597ceb22e"
+       "c5532fb4c3025eb02c9452ba64e4671fcd33900db00b5ea10b4bb919f32f70a5"
+       "24fba8d15d029ca2ed94dc4722459e9b64d679d7ae14b77b61412e2c85b3b641"
+       "74e27bf8147ee1bc825fdd819f9d3e85869979dec40c5105f18149bedb4bd881"
+       "9af2b1c0728d278281d87dc91ead7f5d9f2287b1ed66ec8941e97ab7a6ab73c0"
+       "7ed236688b971b70744d1410d4e86cebde9b2980e0568f38d22db4f319e8d135"
+       "c71be1e48e851103e312e2fb82d00e2c13e9419751f428a559daf40494701760"
+       "fdaf036ac62069f9b785ad2486b8106fb704b7c898d73ff7f66dc657523349d3"
+       "f922af4e48f8d9409737d13038898c1655c7ec43e8c10a72488e6991beb84800"
+       "41a36087a3c357a3228167889377dca3ba9670f0053ab18a6ca3f7c17883fb07"
+       "032f0de3d3eba65c9f561ec788b029488074c6d66cd025c10be3bba359c0dd2c"
+       "4594d6b9753691142f02e67b8eb0fda7d12f6cc9f1299a49b819312d6addad1d"
+       "a9b47677ddcb6c1d17015d0c8007ca2af8a20ad4d4700bda75bf454afaad073b"
        "5c93d1c8acc529a7b3755327eda5fbe5013459ba63385ef67216a50720aabcc1"
        "3613617b9953c22fe46ef2b593a2e5bc79ef3cc88770602e7e569bbd71de113b"
        "01a9797244146bbae39b18ef37e6f2ca5bebded90d9fe3a2f342a9e863aaa4fd"
@@ -693,7 +743,7 @@ This function is called at the very end of Spacemacs initialization."
                 nerd-icons noctilux-theme nodejs-repl nose npm-mode obsidian-theme
                 occidental-theme oldlace-theme omtose-phellack-themes
                 open-junk-file org-cliplink org-contrib org-download org-mime
-                org-pomodoro org-present org-projectile org-rich-yank
+                org-pomodoro org-present org-projectile org-rich-yank org-roam
                 org-superstar organic-green-theme orgit-forge overseer
                 page-break-lines paradox password-generator pcache pcre2el
                 persistent-soft pet phoenix-dark-mono-theme
@@ -725,5 +775,5 @@ This function is called at the very end of Spacemacs initialization."
    ;; If you edit it by hand, you could mess it up, so be careful.
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
-   '(default ((t (:background nil)))))
+   )
   )
