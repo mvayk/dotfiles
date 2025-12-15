@@ -34,6 +34,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-configuration-layers
    '(javascript
      html
+     typescript
      python
      lua
      (unicode-fonts :variables
@@ -41,6 +42,7 @@ This function should only modify configuration layer settings."
 
      rust
      c-c++
+
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
      ;; Uncomment some layer names and press `SPC f e R' (Vim style) or
@@ -52,7 +54,9 @@ This function should only modify configuration layer settings."
      git
      helm
      (lsp :variables
+          lsp-enable-snippet t           ;; THIS IS REQUIRED for snippets
           lsp-lens-enable t)
+     auto-completion
      markdown
      multiple-cursors
      org
@@ -77,6 +81,7 @@ This function should only modify configuration layer settings."
    dotspacemacs-additional-packages '(
                                       centered-cursor-mode
                                       org-roam
+                                      elcord
                                       )
 
    ;; A list of packages that cannot be updated.
@@ -221,7 +226,7 @@ It should only modify the values of Spacemacs settings."
    ;; package can be defined with `:package', or a theme can be defined with
    ;; `:location' to download the theme package, refer the themes section in
    ;; DOCUMENTATION.org for the full theme specifications.
-   dotspacemacs-themes '(doom-gruvbox
+   dotspacemacs-themes '(doom-vibrant
                          spacemacs-dark
                          spacemacs-light
                          )
@@ -245,7 +250,7 @@ It should only modify the values of Spacemacs settings."
    ;; fixed-pitch faces. The `:size' can be specified as
    ;; a non-negative integer (pixel size), or a floating-point (point size).
    ;; Point size is recommended, because it's device independent. (default 10.0)
-   dotspacemacs-default-font '("Iosevka Nerd Font Mono"
+   dotspacemacs-default-font '("JetBrainsMono Nerd Font Mono"
                                :size 18.0
                                :weight regular
                                :width normal)
@@ -586,7 +591,8 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (global-centered-cursor-mode t)
   (global-visual-line-mode -1)
   (setq-default truncate-lines t)
-
+  (elcord-mode)
+  (global-hl-line-mode -1)
 
   ;; Fix scroll wheel compatibility
   (setq ccm-recenter-at-end-of-file t)
@@ -626,7 +632,37 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq company-minimum-prefix-length 1)
   (setq company-idle-delay 0.0)
   (setq company-show-numbers t)
+  (setq lsp-enable-on-type-formatting nil)
+  (setq lsp-enable-indentation nil)  ; Disable LSP-controlled indentation
+  (setq lsp-enable-snippet-text-edit nil)  ; Disable snippet-based edits
 
+  (setq-default indent-tabs-mode nil)  ; Use spaces instead of tabs
+  (setq-default tab-width 4)           ; Display width for tabs
+  (setq-default standard-indent 4)     ; Standard indentation amount
+  (setq-default evil-shift-width 4)
+  ;; JavaScript/JS2
+  (setq-default js-indent-level 4)
+  (setq-default js2-basic-offset 4)
+
+  ;; Web mode
+  (setq-default web-mode-markup-indent-offset 4)
+  (setq-default web-mode-css-indent-offset 4)
+  (setq-default web-mode-code-indent-offset 4)
+
+  ;; TypeScript
+  (setq-default typescript-indent-level 4)
+
+  ;; CSS/SCSS
+  (setq-default css-indent-offset 4)
+
+  ;; Python
+  (setq-default python-indent-offset 4)
+
+  ;; C/C++
+  (setq-default c-basic-offset 4)
+
+  ;; HTML
+  (setq-default sgml-basic-offset 4)
   )
 
 
@@ -643,7 +679,12 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(custom-safe-themes
-     '("f1e8339b04aef8f145dd4782d03499d9d716fdc0361319411ac2efc603249326"
+     '("4d5d11bfef87416d85673947e3ca3d3d5d985ad57b02a7bb2e32beaf785a100e"
+       "d481904809c509641a1a1f1b1eb80b94c58c210145effc2631c1a7f2e4a2fdf4"
+       "13096a9a6e75c7330c1bc500f30a8f4407bd618431c94aeab55c9855731a95e1"
+       "dd4582661a1c6b865a33b89312c97a13a3885dc95992e2e5fc57456b4c545176"
+       "0325a6b5eea7e5febae709dab35ec8648908af12cf2d2b569bedc8da0a3a81c1"
+       "f1e8339b04aef8f145dd4782d03499d9d716fdc0361319411ac2efc603249326"
        "e8bd9bbf6506afca133125b0be48b1f033b1c8647c628652ab7a2fe065c10ef0"
        "3f24dd8f542f4aa8186a41d5770eb383f446d7228cd7a3413b9f5e0ec0d5f3c0"
        "aec7b55f2a13307a55517fdf08438863d694550565dee23181d2ebd973ebd6b8"
@@ -711,34 +752,35 @@ This function is called at the very end of Spacemacs initialization."
                 darkokai-theme darktooth-theme define-word devdocs diminish
                 dired-quick-sort disable-mouse disaster django-theme doom-modeline
                 doom-themes dotenv-mode dracula-theme drag-stuff dumb-jump
-                edit-indirect ef-themes elisp-def elisp-demos elisp-slime-nav
-                emmet-mode emr epc espresso-theme eval-sexp-fu evil-anzu evil-args
-                evil-cleverparens evil-collection evil-easymotion evil-escape
-                evil-evilified-state evil-exchange evil-goggles evil-iedit-state
-                evil-indent-plus evil-lion evil-lisp-state evil-matchit evil-mc
-                evil-nerd-commenter evil-numbers evil-org evil-surround
-                evil-textobj-line evil-tutor evil-unimpaired evil-visual-mark-mode
-                evil-visualstar exotica-theme expand-region eyebrowse eziam-themes
-                fancy-battery farmhouse-themes flatland-theme flatui-theme
-                flycheck-elsa flycheck-package flycheck-pos-tip font-utils
-                gandalf-theme gendoxy ggtags gh-md git-link git-messenger
-                git-modes git-timemachine gitignore-templates gnuplot golden-ratio
-                google-c-style google-translate gotham-theme grandshell-theme
-                grizzl gruber-darker-theme gruvbox-theme haml-mode
-                hc-zenburn-theme helm-ag helm-c-yasnippet helm-comint helm-company
-                helm-cscope helm-css-scss helm-descbinds helm-ls-git helm-lsp
-                helm-make helm-mode-manager helm-org helm-org-rifle
-                helm-projectile helm-purpose helm-pydoc helm-swoop helm-xref
-                hemisu-theme heroku-theme hide-comnt highlight-indentation
-                highlight-numbers highlight-parentheses hl-todo holy-mode htmlize
-                hungry-delete hybrid-mode impatient-mode import-js importmagic
-                indent-guide info+ inkpot-theme inspector ir-black-theme ivy
-                jazz-theme jbeans-theme js-doc js2-mode js2-refactor kaolin-themes
-                ligature light-soap-theme link-hint live-py-mode livid-mode
-                load-env-vars lorem-ipsum lsp-docker lsp-origami lsp-pyright
-                lsp-treemacs lsp-ui lua-mode lush-theme macrostep madhat2r-theme
-                markdown-toc material-theme memoize minimal-theme modus-themes
-                moe-theme molokai-theme monochrome-theme monokai-theme multi-line
+                edit-indirect ef-themes elcord elisp-def elisp-demos
+                elisp-slime-nav emmet-mode emr epc espresso-theme eval-sexp-fu
+                evil-anzu evil-args evil-cleverparens evil-collection
+                evil-easymotion evil-escape evil-evilified-state evil-exchange
+                evil-goggles evil-iedit-state evil-indent-plus evil-lion
+                evil-lisp-state evil-matchit evil-mc evil-nerd-commenter
+                evil-numbers evil-org evil-surround evil-textobj-line evil-tutor
+                evil-unimpaired evil-visual-mark-mode evil-visualstar
+                exotica-theme expand-region eyebrowse eziam-themes fancy-battery
+                farmhouse-themes flatland-theme flatui-theme flycheck-elsa
+                flycheck-package flycheck-pos-tip font-utils gandalf-theme gendoxy
+                ggtags gh-md git-link git-messenger git-modes git-timemachine
+                gitignore-templates gnuplot golden-ratio google-c-style
+                google-translate gotham-theme grandshell-theme grizzl
+                gruber-darker-theme gruvbox-theme haml-mode hc-zenburn-theme
+                helm-ag helm-c-yasnippet helm-comint helm-company helm-cscope
+                helm-css-scss helm-descbinds helm-ls-git helm-lsp helm-make
+                helm-mode-manager helm-org helm-org-rifle helm-projectile
+                helm-purpose helm-pydoc helm-swoop helm-xref hemisu-theme
+                heroku-theme hide-comnt highlight-indentation highlight-numbers
+                highlight-parentheses hl-todo holy-mode htmlize hungry-delete
+                hybrid-mode impatient-mode import-js importmagic indent-guide
+                info+ inkpot-theme inspector ir-black-theme ivy jazz-theme
+                jbeans-theme js-doc js2-mode js2-refactor kaolin-themes ligature
+                light-soap-theme link-hint live-py-mode livid-mode load-env-vars
+                lorem-ipsum lsp-docker lsp-origami lsp-pyright lsp-treemacs lsp-ui
+                lua-mode lush-theme macrostep madhat2r-theme markdown-toc
+                material-theme memoize minimal-theme modus-themes moe-theme
+                molokai-theme monochrome-theme monokai-theme multi-line
                 multiple-cursors mustang-theme mwim nameless naquadah-theme
                 nerd-icons noctilux-theme nodejs-repl nose npm-mode obsidian-theme
                 occidental-theme oldlace-theme omtose-phellack-themes
@@ -764,12 +806,13 @@ This function is called at the very end of Spacemacs initialization."
                 tangotango-theme tao-theme term-cursor tern toc-org toxi-theme
                 treemacs-evil treemacs-icons-dired treemacs-magit treemacs-persp
                 treemacs-projectile twilight-anti-bright-theme
-                twilight-bright-theme twilight-theme ucs-utils ujelly-theme
-                underwater-theme undo-fu undo-fu-session unfill unicode-fonts uv
-                vi-tilde-fringe vim-powerline volatile-highlights vundo
-                web-beautify web-completion-data web-mode wgrep white-sand-theme
-                winum writeroom-mode ws-butler xcscope xterm-color yapfify
-                yasnippet-snippets zen-and-art-theme zenburn-theme zonokai-emacs)))
+                twilight-bright-theme twilight-theme typescript-mode ucs-utils
+                ujelly-theme underwater-theme undo-fu undo-fu-session unfill
+                unicode-fonts uv vi-tilde-fringe vim-powerline volatile-highlights
+                vundo web-beautify web-completion-data web-mode wgrep
+                white-sand-theme winum writeroom-mode ws-butler xcscope
+                xterm-color yapfify yasnippet-snippets zen-and-art-theme
+                zenburn-theme zonokai-emacs)))
   (custom-set-faces
    ;; custom-set-faces was added by Custom.
    ;; If you edit it by hand, you could mess it up, so be careful.
