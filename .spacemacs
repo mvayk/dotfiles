@@ -238,7 +238,7 @@ It should only modify the values of Spacemacs settings."
    ;; refer to the DOCUMENTATION.org for more info on how to create your own
    ;; spaceline theme. Value can be a symbol or list with additional properties.
    ;; (default '(spacemacs :separator wave :separator-scale 1.5))
-   dotspacemacs-mode-line-theme '(vanilla :separator wave :separator-scale 1.5)
+   dotspacemacs-mode-line-theme '(doom :separator wave :separator-scale 1.5)
    ;;dotspacemacs-mode-line-theme '(spacemacs :separator wave :separator-scale 1.5)
 
    ;; If non-nil the cursor color matches the state color in GUI Emacs.
@@ -618,17 +618,17 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   (setq lsp-enable-folding nil)  ;; disable if you don't use it
   (setq lsp-enable-symbol-highlighting nil)  ;; disable automatic highlighting
   (setq lsp-enable-on-type-formatting nil)  ;; can be slow
-  (setq lsp-ui-doc-enable t)
-  (setq lsp-ui-doc-position 'at-point)
-  (setq lsp-ui-doc-delay 0)
-  (setq lsp-ui-sideline-enable t)
-  (setq lsp-ui-sideline-show-hover t)
+  ;;(setq lsp-ui-doc-enable t)
+  ;;(setq lsp-ui-doc-position 'at-point)
+  ;;(setq lsp-ui-doc-delay 0)
+  ;;(setq lsp-ui-sideline-enable t)
+  ;;(setq lsp-ui-sideline-show-hover t)
 
   (setq org-startup-indented t)
 
   ;; Better peek features
-  (setq lsp-ui-peek-enable t)
-  (setq lsp-ui-peek-always-show t)
+  ;;(setq lsp-ui-peek-enable t)
+  ;;(setq lsp-ui-peek-always-show t)
   (setq company-minimum-prefix-length 1)
   (setq company-idle-delay 0.0)
   (setq company-show-numbers t)
@@ -679,7 +679,10 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(custom-safe-themes
-     '("4d5d11bfef87416d85673947e3ca3d3d5d985ad57b02a7bb2e32beaf785a100e"
+     '("f4d1b183465f2d29b7a2e9dbe87ccc20598e79738e5d29fc52ec8fb8c576fcfd"
+       "e4a702e262c3e3501dfe25091621fe12cd63c7845221687e36a79e17cf3a67e0"
+       "56044c5a9cc45b6ec45c0eb28df100d3f0a576f18eef33ff8ff5d32bac2d9700"
+       "4d5d11bfef87416d85673947e3ca3d3d5d985ad57b02a7bb2e32beaf785a100e"
        "d481904809c509641a1a1f1b1eb80b94c58c210145effc2631c1a7f2e4a2fdf4"
        "13096a9a6e75c7330c1bc500f30a8f4407bd618431c94aeab55c9855731a95e1"
        "dd4582661a1c6b865a33b89312c97a13a3885dc95992e2e5fc57456b4c545176"
