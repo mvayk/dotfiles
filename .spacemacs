@@ -226,7 +226,7 @@ It should only modify the values of Spacemacs settings."
    ;; package can be defined with `:package', or a theme can be defined with
    ;; `:location' to download the theme package, refer the themes section in
    ;; DOCUMENTATION.org for the full theme specifications.
-   dotspacemacs-themes '(doom-henna
+   dotspacemacs-themes '(doom-outrun-electric
                          spacemacs-dark
                          spacemacs-light
                          )
@@ -586,6 +586,9 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   configuration.
   Put your configuration code here, except for variables that should be set
   before packages are loaded."
+  ;; Enable visual line mode specifically for org-mode
+  (add-hook 'org-mode-hook 'visual-line-mode)
+
   (defun spacemacs/random-doom-theme ()
     "Load a random theme from doom-themes, avoiding the currently enabled one if possible."
     (interactive)
@@ -609,6 +612,29 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
 
   (spacemacs/declare-prefix "t" "themes")
   (spacemacs/set-leader-keys "tr" 'spacemacs/random-doom-theme)
+  ;; Add this to your dotspacemacs/user-config function
+  (with-eval-after-load 'evil
+    (define-key evil-normal-state-map (kbd "j") 'evil-next-visual-line)
+    (define-key evil-normal-state-map (kbd "k") 'evil-previous-visual-line)
+    (define-key evil-visual-state-map (kbd "j") 'evil-next-visual-line)
+    (define-key evil-visual-state-map (kbd "k") 'evil-previous-visual-line))
+
+  ;; Optional: Also enable it for text files
+  ;; (add-hook 'text-mode-hook 'visual-line-mode)
+
+  ;; If you want soft wrapping at a specific column instead of window width:
+  ;; (add-hook 'org-mode-hook
+  ;;           (lambda ()
+  ;;             (visual-line-mode 1)
+  ;;             (visual-fill-column-mode 1)))
+  ;; Note: This requires the visual-fill-column package
+  ;; Add 'visual-fill-column' to dotspacemacs-additional-packages if using this
+
+  ;; Optional: Set the fill column width (default is usually 70-80)
+  ;; (add-hook 'org-mode-hook
+  ;;           (lambda ()
+  ;;             (setq fill-column 100)
+  ;;             (visual-line-mode 1)))
 
   (global-company-mode)
                                         ; (global-centered-cursor-mode t)
@@ -703,7 +729,8 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(custom-safe-themes
-     '("72d9086e9e67a3e0e0e6ba26a1068b8b196e58a13ccaeff4bfe5ee6288175432"
+     '("9d5124bef86c2348d7d4774ca384ae7b6027ff7f6eb3c401378e298ce605f83a"
+       "72d9086e9e67a3e0e0e6ba26a1068b8b196e58a13ccaeff4bfe5ee6288175432"
        "4b88b7ca61eb48bb22e2a4b589be66ba31ba805860db9ed51b4c484f3ef612a7"
        "f4d1b183465f2d29b7a2e9dbe87ccc20598e79738e5d29fc52ec8fb8c576fcfd"
        "e4a702e262c3e3501dfe25091621fe12cd63c7845221687e36a79e17cf3a67e0"
