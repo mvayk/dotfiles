@@ -226,7 +226,7 @@ It should only modify the values of Spacemacs settings."
    ;; package can be defined with `:package', or a theme can be defined with
    ;; `:location' to download the theme package, refer the themes section in
    ;; DOCUMENTATION.org for the full theme specifications.
-   dotspacemacs-themes '(doom-vibrant
+   dotspacemacs-themes '(doom-henna
                          spacemacs-dark
                          spacemacs-light
                          )
@@ -586,6 +586,30 @@ If you are unsure, try setting them in `dotspacemacs/user-config' first."
   configuration.
   Put your configuration code here, except for variables that should be set
   before packages are loaded."
+  (defun spacemacs/random-doom-theme ()
+    "Load a random theme from doom-themes, avoiding the currently enabled one if possible."
+    (interactive)
+    (random t) ; Seed the RNG for better randomness across sessions
+    (let* ((doom-themes-list
+            (seq-filter (lambda (theme)
+                          (string-prefix-p "doom-" (symbol-name theme)))
+                        (custom-available-themes)))
+           (current-themes custom-enabled-themes)
+           chosen-theme)
+      (mapc #'disable-theme current-themes)
+      (if (> (length doom-themes-list) 1)
+          (progn
+            (setq chosen-theme (nth (random (length doom-themes-list)) doom-themes-list))
+            (when (and (eq (length current-themes) 1)
+                       (eq chosen-theme (car current-themes)))
+              (setq chosen-theme (nth (random (length doom-themes-list)) doom-themes-list))))
+        (setq chosen-theme (car doom-themes-list)))
+      (load-theme chosen-theme t)
+      (message "Loaded random Doom theme: %s" chosen-theme)))
+
+  (spacemacs/declare-prefix "t" "themes")
+  (spacemacs/set-leader-keys "tr" 'spacemacs/random-doom-theme)
+
   (global-company-mode)
                                         ; (global-centered-cursor-mode t)
   (global-centered-cursor-mode t)
@@ -679,7 +703,9 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(custom-safe-themes
-     '("f4d1b183465f2d29b7a2e9dbe87ccc20598e79738e5d29fc52ec8fb8c576fcfd"
+     '("72d9086e9e67a3e0e0e6ba26a1068b8b196e58a13ccaeff4bfe5ee6288175432"
+       "4b88b7ca61eb48bb22e2a4b589be66ba31ba805860db9ed51b4c484f3ef612a7"
+       "f4d1b183465f2d29b7a2e9dbe87ccc20598e79738e5d29fc52ec8fb8c576fcfd"
        "e4a702e262c3e3501dfe25091621fe12cd63c7845221687e36a79e17cf3a67e0"
        "56044c5a9cc45b6ec45c0eb28df100d3f0a576f18eef33ff8ff5d32bac2d9700"
        "4d5d11bfef87416d85673947e3ca3d3d5d985ad57b02a7bb2e32beaf785a100e"
