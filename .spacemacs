@@ -41,7 +41,7 @@ This function should only modify configuration layer settings."
                     unicode-fonts-enable-ligatures t)
 
      rust
-     c-c++
+     (c-c++ :variables c-c++-backend 'lsp-clangd)
 
      ;; ----------------------------------------------------------------
      ;; Example of useful layers you may want to use right away.
@@ -226,7 +226,7 @@ It should only modify the values of Spacemacs settings."
    ;; package can be defined with `:package', or a theme can be defined with
    ;; `:location' to download the theme package, refer the themes section in
    ;; DOCUMENTATION.org for the full theme specifications.
-   dotspacemacs-themes '(doom-outrun-electric
+   dotspacemacs-themes '(noctalia
                          spacemacs-dark
                          spacemacs-light
                          )
@@ -578,6 +578,7 @@ This function is called immediately after `dotspacemacs/init', before layer
 configuration.
 It is mostly for variables that should be set before packages are loaded.
 If you are unsure, try setting them in `dotspacemacs/user-config' first."
+  (add-to-list 'custom-theme-load-path "~/.emacs.d/themes/")
   )
 
 (defun dotspacemacs/user-config ()
@@ -729,7 +730,8 @@ This function is called at the very end of Spacemacs initialization."
    ;; Your init file should contain only one such instance.
    ;; If there is more than one, they won't work right.
    '(custom-safe-themes
-     '("9d5124bef86c2348d7d4774ca384ae7b6027ff7f6eb3c401378e298ce605f83a"
+     '("6a0a03e47580d3c6bfaebf06e0fd517beb73462576e8301a554098dcaae72b2f"
+       "9d5124bef86c2348d7d4774ca384ae7b6027ff7f6eb3c401378e298ce605f83a"
        "72d9086e9e67a3e0e0e6ba26a1068b8b196e58a13ccaeff4bfe5ee6288175432"
        "4b88b7ca61eb48bb22e2a4b589be66ba31ba805860db9ed51b4c484f3ef612a7"
        "f4d1b183465f2d29b7a2e9dbe87ccc20598e79738e5d29fc52ec8fb8c576fcfd"
