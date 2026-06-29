@@ -205,7 +205,7 @@
   ],
   "chat.commandCenter.enabled": false,
   "workbench.navigationControl.enabled": false,
-  "workbench.colorTheme": "Material Theme Ocean High Contrast",
+  "workbench.colorTheme": "Default Dark+",
   "window.commandCenter": false,
   "window.menuBarVisibility": "compact",
   "editor.overtypeCursorStyle": "line",
@@ -221,5 +221,6 @@
   "codeium.enableCodeLens": false,
   "workbench.panel.showLabels": false,
   "glassit.alpha": 220,
-  "workbench.sideBar.location": "right"
+  "workbench.secondarySideBar.defaultVisibility": "hidden",
+  "chat.agent.enabled": false
 }
