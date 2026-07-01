@@ -1,0 +1,87 @@
+@import "./colors.rasi"
+* {
+    background-color:           @background;
+    text-color:                 @foreground;
+    border-color:               @color8;
+    margin:                     0;
+    padding:                    0;
+    spacing:                    0;
+    font:                       "JetBrains Mono 11";
+}
+window {
+    width:                      100%;
+    height:                     22px;
+    location:                   south;
+    anchor:                     south;
+    border:                     1px 0 0 0;
+    border-radius:              0;
+}
+mainbox {
+    orientation:                horizontal;
+    children:                   [ inputbar, listview ];
+}
+inputbar {
+    children:                   [ prompt, entry, num-filtered-rows, textbox-num-sep, num-rows ];
+    expand:                     false;
+    border:                     0 1px 0 0;
+}
+prompt {
+    padding:                    0 8px 0 10px;
+    text-color:                 @color4;
+    border:                     0 1px 0 0;
+    vertical-align:             0.5;
+}
+entry {
+    padding:                    0 10px;
+    placeholder:                "type to filter...";
+    placeholder-color:          @color8;
+    vertical-align:             0.5;
+    width:                      14em;
+    cursor:                     text;
+}
+num-filtered-rows,
+num-rows {
+    expand:                     false;
+    padding:                    0 6px;
+    text-color:                 @color8;
+    font:                       "JetBrains Mono 10";
+    vertical-align:             0.5;
+}
+textbox-num-sep {
+    expand:                     false;
+    str:                        "/";
+    text-color:                 @color8;
+    vertical-align:             0.5;
+}
+listview {
+    orientation:                horizontal;
+    columns:                    999;
+    lines:                      1;
+    fixed-num-lines:            false;
+    scrollbar:                  false;
+    expand:                     true;
+    border:                     0 0 0 0;
+}
+element {
+    padding:                    0 11px;
+    border:                     0 1px 0 0;
+    border-radius:              0;
+    vertical-align:             0.5;
+    orientation:                horizontal;
+}
+element normal.normal   { background-color: @background; text-color: @foreground; }
+element normal.urgent   { background-color: @background; text-color: @color1; }
+element normal.active   { background-color: @background; text-color: @foreground; }
+element selected.normal { background-color: @color8;     text-color: @color4; }
+element selected.urgent { background-color: @color8;     text-color: @color1; }
+element selected.active { background-color: @color8;     text-color: @color4; }
+element-text {
+    background-color:           transparent;
+    text-color:                 inherit;
+    vertical-align:             0.5;
+    horizontal-align:           0;
+}
+element-icon {
+    size:                       0;
+    background-color:           transparent;
+}

@@ -1,12 +1,12 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 22,
-  "spacing": 0,
-  "margin-top": 0,
-  "margin-left": 0,
-  "margin-right": 0,
-  "margin-bottom": 0,
+  "height": 34,
+  "spacing": 4,
+  "margin-top": -12,
+  "margin-left": 12,
+  "margin-right": 12,
+  "margin-bottom": 6,
 
   "modules-left": ["hyprland/workspaces", "hyprland/window"],
 
@@ -25,22 +25,35 @@
 
   // ── Workspaces ────────────────────────────────────────────────
   "hyprland/workspaces": {
-    "format": "{name}",
+    "format": "{icon}",
     "on-click": "activate",
+    "format-icons": {
+      "1": "1",
+      "2": "2",
+      "3": "3",
+      "4": "4",
+      "5": "5",
+      "6": "6",
+      "7": "7",
+      "8": "8",
+      "9": "9",
+      //"urgent": "󰀧",
+      //"active": "󰮯",
+      //"default": "󰊠"
+    },
   },
 
   // ── Active window title ───────────────────────────────────────
   "hyprland/window": {
-    "format": "{}",
+    "format": "  {}",
     "max-length": 50,
     "separate-outputs": true,
   },
 
   // ── Clock ─────────────────────────────────────────────────────
   "clock": {
-    "format": "[ {:%H:%M:%S} ]",
-    "format-alt": "[ {:%a %d %b %Y} ]",
-    "interval": 1,
+    "format": " {:%H:%M}",
+    "format-alt": " {:%a %d %b %Y}",
     "tooltip-format": "<tt>{calendar}</tt>",
     "calendar": {
       "mode": "month",
@@ -59,8 +72,17 @@
 
   // ── Audio ─────────────────────────────────────────────────────
   "pulseaudio": {
-    "format": "[ volume: {volume}% ]",
-    "format-muted": "[ volume: muted ]",
+    "format": "{icon} {volume}%",
+    "format-muted": " muted",
+    "format-icons": {
+      "headphone": "󰋋 ",
+      "hands-free": "󱠰 ",
+      "headset": "󰋎 ",
+      "phone": "󰏲 ",
+      "portable": "󰏲 ",
+      "car": "󰄋 ",
+      "default": [" ", "", ""],
+    },
     "on-click": "pavucontrol",
     "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
     "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
@@ -69,26 +91,26 @@
 
   // ── Network ───────────────────────────────────────────────────
   "network": {
-    "format-wifi": "[ wifi: {signalStrength}% ]",
-    "format-ethernet": "[ eth: {ipaddr} ]",
-    "format-linked": "[ eth: no ip ]",
-    "format-disconnected": "[ net: offline ]",
-    "format-alt": "[ {essid} up:{bandwidthUpBytes} down:{bandwidthDownBytes} ]",
-    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}\n{gwaddr}",
-    "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
+    "format-wifi": "  {signalStrength}%",
+    "format-ethernet": "󰈀  {ipaddr}",
+    "format-linked": "󰈀  (no IP)",
+    "format-disconnected": "󰤮  offline",
+    "format-alt": "  {essid}  ↑{bandwidthUpBytes}  ↓{bandwidthDownBytes}",
+    "tooltip-format-wifi": "  {essid} ({signalStrength}%)\n  {ipaddr}\n  {gwaddr}",
+    "tooltip-format-ethernet": "󰈀  {ifname}\n  {ipaddr}/{cidr}",
     "on-click-right": "nm-connection-editor",
   },
 
   // ── CPU ───────────────────────────────────────────────────────
   "cpu": {
-    "format": "[ cpu: {usage}% ]",
+    "format": "󰍛 {usage}%",
     "interval": 2,
     "tooltip": true,
   },
 
   // ── Memory ───────────────────────────────────────────────────
   "memory": {
-    "format": "[ mem: {used:0.1f}G ]",
+    "format": "󰓅  {used:0.1f}G",
     "interval": 5,
     "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G",
   },
@@ -96,8 +118,8 @@
   // ── Temperature ───────────────────────────────────────────────
   "temperature": {
     "critical-threshold": 80,
-    "format": "[ temp: {temperatureC}°C ]",
-    "format-critical": "[ temp: {temperatureC}°C ]",
+    "format": " {temperatureC}°C",
+    "format-critical": " {temperatureC}°C",
     "tooltip": false,
   },
 
@@ -107,9 +129,10 @@
       "warning": 30,
       "critical": 15,
     },
-    "format": "[ bat: {capacity}% ]",
-    "format-charging": "[ bat: {capacity}% chr ]",
-    "format-plugged": "[ bat: {capacity}% plug ]",
+    "format": "{icon}  {capacity}%",
+    "format-charging": "󰂄  {capacity}%",
+    "format-plugged": "󰚥  {capacity}%",
+    "format-icons": ["󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
     "tooltip-format": "{timeTo} — {capacity}%",
   },
 

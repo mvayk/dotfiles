@@ -1,50 +1,146 @@
-@import url('file:///home/mvayk/.cache/wal/colors-waybar.css');
+@import "./colors.css";
 
 * {
+  font-family: "JetBrains Mono", monospace;
+  font-size: 13px;
   border: none;
   border-radius: 0;
-  font-family: Iosevka Nerd Font;
-  font-weight: bold;
-  font-size: 13px;
-  color: #FFFFFF;
+  min-height: 0;
 }
 
 window#waybar {
-  background: rgba(0,0,0,1);
-  transition-property: background-color;
-  transition-duration: 0.5s;
-  border-radius: 0;
-  margin: 2px;
-  border: 1px solid @color10;
+  background: @background;
+  border-top: 1px solid @color0;
+  color: @foreground;
 }
 
-#workspaces button {
-  padding: 0 8px;
-  color: #FFFFFF;
+window#waybar.hidden {
+  opacity: 0.2;
 }
 
-#workspaces button:hover {
-  background: rgba(0,0,0, 0.4)
+.modules-left,
+.modules-center,
+.modules-right {
+  padding: 0;
 }
 
-#workspaces button.active {
-  color: #FFFFFF;
-  background: transparent;
-}
-
+#workspaces,
+#window,
 #clock,
+#pulseaudio,
+#network,
 #cpu,
 #memory,
-#network,
-#pulseaudio,
+#temperature,
+#battery,
+#tray,
+#custom-power {
+  padding: 0 10px;
+  margin: 0;
+  border-radius: 0;
+  background: transparent;
+  color: @foreground;
+  border-right: 1px solid @color0;
+}
+
+#workspaces {
+  padding: 0;
+  border-right: none;
+}
+#workspaces button {
+  padding: 0 10px;
+  background: transparent;
+  color: @color8;
+  border-radius: 0;
+  border-right: 1px solid @color0;
+}
+#workspaces button:hover {
+  background: @color0;
+  color: @foreground;
+}
+#workspaces button.active {
+  color: @color4;
+  background: @color0;
+  border-bottom: 2px solid @color4;
+}
+#workspaces button.urgent {
+  color: @color1;
+}
+
+#window {
+  color: @color7;
+  font-size: 12px;
+}
+#clock {
+  color: @color4;
+  font-weight: 700;
+}
+#pulseaudio {
+  color: @color5;
+}
+#pulseaudio.muted {
+  color: @color8;
+}
+#network {
+  color: @color6;
+}
+#network.disconnected {
+  color: @color1;
+}
+#cpu {
+  color: @color6;
+}
+#cpu.warning {
+  color: @color3;
+}
+#cpu.critical {
+  color: @color1;
+}
+#memory {
+  color: @color2;
+}
+#memory.warning {
+  color: @color3;
+}
+#memory.critical {
+  color: @color1;
+}
+#temperature {
+  color: @color3;
+}
+#temperature.critical {
+  color: @color1;
+  animation: blink 1s linear infinite;
+}
+#battery {
+  color: @color2;
+}
+#battery.warning:not(.charging) {
+  color: @color3;
+}
+#battery.critical:not(.charging) {
+  color: @color1;
+  animation: blink 0.8s linear infinite;
+}
+#custom-power {
+  color: @color1;
+  border-right: none;
+}
+#custom-power:hover {
+  background: @color0;
+}
 #tray {
-  padding: 0 8px;
+  background: transparent;
 }
-
 #tray > .passive {
-  opacity: 0.6;
+  -gtk-icon-effect: dim;
+}
+#tray > .needs-attention {
+  -gtk-icon-effect: highlight;
 }
 
-#tray > .active {
-  opacity: 1.0;
+@keyframes blink {
+  to {
+    opacity: 0.5;
+  }
 }

@@ -1,0 +1,8 @@
+* {
+    background:   {{background}};
+    foreground:   {{foreground}};
+    selected-bg:  {{color4}};
+    selected-fg:  {{background}};
+    border-color: {{color4}};
+    urgent-color: {{color1}};
+}

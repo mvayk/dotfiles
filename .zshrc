@@ -3,23 +3,20 @@
 
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
-export TERM="tmux-256color"
-export COLORTERM="truecolor"
-export ZSH_CUSTOM=$ZSH/custom/
-export CURRENT_THEME="gruvbox"
 
 # Set name of the theme to load --- if set to "random", it will
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-#ZSH_THEME=Chicago95ZSH_THEME=Chicago95
-clear
-fastfetch -l haiku_small
+#ZSH_THEME="robbyrussell"
+ZSH_THEME="mh"
 
 # Set list of themes to pick from when loading at random
-#ZSH_THEME=Chicago95# a theme from this variable instead of looking in $ZSH/themes/
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
 # If set to an empty array, this variable will have no effect.
-ZSH_THEME=mh
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
+
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
 
@@ -74,12 +71,7 @@ ZSH_THEME=mh
 # Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-    git
-    zsh-autosuggestions
-    zsh-completions
-    zsh-syntax-highlighting
-)
+plugins=(git zsh-autosuggestions zsh-syntax-highlighting zsh-completions)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -110,10 +102,16 @@ source $ZSH/oh-my-zsh.sh
 #
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias fastfetch="fastfetch -l haiku_small"
-alias ls="eza --icons"
-alias clear="clear && fastfetch -l haiku_small"
-alias emacs="emacsclient -c -a 'emacs'"
 alias vim="nvim"
+alias set-wallpaper="/home/mvayk/.config/hypr/coffeeandherbs.sh"
+alias set-wallpaper-light="/home/mvayk/.config/hypr/coffeeandherbs-light.sh"
+
+_accept_suggestion_or_complete() {
+    if [[ -n $POSTDISPLAY ]]; then
+        zle forward-char
+    else
+        zle expand-or-complete
+            fi
+}
+zle -N _accept_suggestion_or_complete
+bindkey '^I' _accept_suggestion_or_complete
