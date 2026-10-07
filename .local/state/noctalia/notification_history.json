@@ -1,0 +1,137 @@
+{
+  "change_serial": 10,
+  "entries": [
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 2,
+      "notification": {
+        "actions": [
+          "app.enable-pref::disable-connected-notifications",
+          "Don’t show this message again"
+        ],
+        "app_name": "NetworkManager Applet",
+        "body": "You are now connected to “Wired connection 1”.",
+        "category": null,
+        "desktop_entry": "org.freedesktop.network-manager-applet",
+        "expiry_wall_ms": 1787123179846,
+        "icon": "nm-device-wired",
+        "id": 1,
+        "image_data": null,
+        "origin": "external",
+        "persist_in_history": false,
+        "received_wall_ms": 1787123173846,
+        "summary": "Connection Established",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 4,
+      "notification": {
+        "actions": [
+          "app.enable-pref::disable-connected-notifications",
+          "Don’t show this message again"
+        ],
+        "app_name": "NetworkManager Applet",
+        "body": "You are now connected to “Wired connection 1”.",
+        "category": null,
+        "desktop_entry": "org.freedesktop.network-manager-applet",
+        "expiry_wall_ms": 1787205547057,
+        "icon": "nm-device-wired",
+        "id": 2,
+        "image_data": null,
+        "origin": "external",
+        "persist_in_history": false,
+        "received_wall_ms": 1787205541057,
+        "summary": "Connection Established",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 6,
+      "notification": {
+        "actions": [
+          "app.enable-pref::disable-connected-notifications",
+          "Don’t show this message again"
+        ],
+        "app_name": "NetworkManager Applet",
+        "body": "You are now connected to “Wired connection 1”.",
+        "category": null,
+        "desktop_entry": "org.freedesktop.network-manager-applet",
+        "expiry_wall_ms": 1787267105041,
+        "icon": "nm-device-wired",
+        "id": 3,
+        "image_data": null,
+        "origin": "external",
+        "persist_in_history": false,
+        "received_wall_ms": 1787267099041,
+        "summary": "Connection Established",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 8,
+      "notification": {
+        "actions": [
+          "app.enable-pref::disable-connected-notifications",
+          "Don’t show this message again"
+        ],
+        "app_name": "NetworkManager Applet",
+        "body": "You are now connected to “Wired connection 1”.",
+        "category": null,
+        "desktop_entry": "org.freedesktop.network-manager-applet",
+        "expiry_wall_ms": 1787271011163,
+        "icon": "nm-device-wired",
+        "id": 4,
+        "image_data": null,
+        "origin": "external",
+        "persist_in_history": false,
+        "received_wall_ms": 1787271005163,
+        "summary": "Connection Established",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 10,
+      "notification": {
+        "actions": [
+          "app.enable-pref::disable-connected-notifications",
+          "Don’t show this message again"
+        ],
+        "app_name": "NetworkManager Applet",
+        "body": "You are now connected to “Wired connection 1”.",
+        "category": null,
+        "desktop_entry": "org.freedesktop.network-manager-applet",
+        "expiry_wall_ms": 1787654931709,
+        "icon": "nm-device-wired",
+        "id": 5,
+        "image_data": null,
+        "origin": "external",
+        "persist_in_history": false,
+        "received_wall_ms": 1787654925709,
+        "summary": "Connection Established",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": true
+    }
+  ],
+  "next_id": 10,
+  "version": 2
+}

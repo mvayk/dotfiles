@@ -1,0 +1,18 @@
+{
+  "Applications": [
+    "/run/current-system/sw/share/applications/vesktop.desktop",
+    "/run/current-system/sw/share/applications/steam.desktop",
+    "/etc/profiles/per-user/mvayk/share/applications/kitty.desktop",
+    "/run/current-system/sw/share/applications/firefox.desktop",
+    "/var/lib/flatpak/exports/share/applications/org.vinegarhq.Sober.desktop",
+    "/run/current-system/sw/share/applications/virt-manager.desktop",
+    "/run/current-system/sw/share/applications/org.prismlauncher.PrismLauncher.desktop",
+    "/run/current-system/sw/share/applications/zen-beta.desktop",
+    "/run/current-system/sw/share/applications/helium.desktop",
+    "/run/current-system/sw/share/applications/chromium-browser.desktop",
+    "/etc/profiles/per-user/mvayk/share/applications/dev.noctalia.Noctalia.desktop",
+    "/run/current-system/sw/share/applications/writer.desktop",
+    "/run/current-system/sw/share/applications/lunarclient.desktop",
+    "/run/current-system/sw/share/applications/org.keepassxc.KeePassXC.desktop"
+  ]
+}
