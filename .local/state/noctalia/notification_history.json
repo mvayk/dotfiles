@@ -1,5 +1,5 @@
 {
-  "change_serial": 10,
+  "change_serial": 16,
   "entries": [
     {
       "active": false,
@@ -130,8 +130,77 @@
         "urgency": "normal"
       },
       "seen": true
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 13,
+      "notification": {
+        "actions": [],
+        "app_name": "notify-send",
+        "body": "",
+        "category": null,
+        "desktop_entry": null,
+        "expiry_wall_ms": 1791389855755,
+        "icon": null,
+        "id": 10,
+        "image_data": null,
+        "origin": "external",
+        "persist_in_history": false,
+        "received_wall_ms": 1791389849755,
+        "summary": "a",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 14,
+      "notification": {
+        "actions": [],
+        "app_name": "notify-send",
+        "body": "",
+        "category": null,
+        "desktop_entry": null,
+        "expiry_wall_ms": 1791389856901,
+        "icon": null,
+        "id": 11,
+        "image_data": null,
+        "origin": "external",
+        "persist_in_history": false,
+        "received_wall_ms": 1791389850901,
+        "summary": "a",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
+    },
+    {
+      "active": false,
+      "close_reason": "expired",
+      "event_serial": 16,
+      "notification": {
+        "actions": [],
+        "app_name": "notify-send",
+        "body": "",
+        "category": null,
+        "desktop_entry": null,
+        "expiry_wall_ms": 1791390184797,
+        "icon": null,
+        "id": 14,
+        "image_data": null,
+        "origin": "external",
+        "persist_in_history": false,
+        "received_wall_ms": 1791390178797,
+        "summary": "a",
+        "timeout": 6000,
+        "urgency": "normal"
+      },
+      "seen": false
     }
   ],
-  "next_id": 10,
+  "next_id": 15,
   "version": 2
 }

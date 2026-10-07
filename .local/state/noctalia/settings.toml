@@ -8,7 +8,6 @@ order = [ "default" ]
     center = [ "media", "audio_visualizer" ]
     contact_shadow = true
     end = [
-        "taskbar",
         "tray",
         "clipboard",
         "bluetooth",
@@ -51,10 +50,10 @@ widget_order = [
     visible = true
 
     [desktop_widgets.widget.desktop-widget-0000000000000003]
-    box_height = 0.0
-    box_width = 0.0
+    box_height = 640.0
+    box_width = 736.0
     cx = 1280.0
-    cy = 704.0
+    cy = 720.0
     output = "DP-1"
     placement_height = 1440.0
     placement_width = 2560.0
@@ -63,6 +62,11 @@ widget_order = [
 
         [desktop_widgets.widget.desktop-widget-0000000000000003.settings]
         background = false
+        primary_color = "primary"
+        rotation_speed = 1.1000000000000001
+        secondary_color = "secondary"
+        sensitivity = 1.1000000000000001
+        visualization_mode = "wave_rings"
 
     [desktop_widgets.widget.desktop-widget-0000000000000006]
     box_height = 0.0
@@ -240,16 +244,25 @@ widget_order = [ "lockscreen-login-box@DP-2", "lockscreen-login-box@DP-1", "lock
         show_weather = true
 
 [notification]
+filter_order = [ "filter" ]
 offset_x = 25
 position = "top_center"
 
-[osd]
-orientation = "vertical"
-position = "center_right"
-position_vertical = "center_right"
+    [notification.filter.filter]
+    allow_permanent = true
+    bypass_dnd = false
+    enabled = true
+    match = "firefox"
+    play_sound = true
+    save_history = true
+    show_toast = false
 
-    [osd.kinds]
-    media = false
+[osd]
+background_opacity = 0.74999998323619366
+border = false
+offset_y = 100
+position = "bottom_center"
+position_vertical = "center_right"
 
 [plugins]
 enabled = [ "weinguyen/procmon" ]
@@ -270,7 +283,7 @@ builtin = "Nord"
 community_palette = "ADW"
 pure_black_dark = true
 source = "wallpaper"
-wallpaper_scheme = "soft"
+wallpaper_scheme = "vibrant"
 
     [theme.templates]
     builtin_ids = [ "gtk3", "gtk4", "ghostty", "hyprland", "kcolorscheme", "kitty", "niri", "qt" ]
@@ -297,7 +310,11 @@ transition = [ "disc", "honeycomb", "stripes", "wipe", "zoom" ]
 [widget.media]
 hide_when_no_media = true
 
+[widget.tray]
+drawer = true
+
 [widget.workspaces]
+focused_output_only = true
 hide_when_empty = true
 labels_only_when_occupied = true
-show_labels = false
+style = "minimal"

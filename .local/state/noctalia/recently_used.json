@@ -1,6 +1,7 @@
 {
   "Applications": [
     "/run/current-system/sw/share/applications/vesktop.desktop",
+    "/run/current-system/sw/share/applications/spotify.desktop",
     "/run/current-system/sw/share/applications/steam.desktop",
     "/etc/profiles/per-user/mvayk/share/applications/kitty.desktop",
     "/run/current-system/sw/share/applications/firefox.desktop",
