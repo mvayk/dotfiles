@@ -25,7 +25,7 @@ return {
   priority = 1000,
   config = function()
     require("matugen-noctalia").setup()
-    vim.cmd.colorscheme("matugen")
+    vim.cmd.colorscheme("matugen-noctalia")
   end,
 }
 EOF
