@@ -1,0 +1,21 @@
+backend = "kmeans"
+color_space = "lch"
+palette = "harddark16"
+threshold = 11
+check_contrast = true
+
+#color_space = "salience"
+#palette = "saliencedark16"
+#saturation = 70
+
+#color_space = "lchmixed"
+#palette = "harddark16"
+#saturation = 70
+
+[templates]
+hyprland = { src = "colors-hyprland.lua", dst = "~/.config/hypr/wallust-colors.lua" }
+waybar = { src = "colors-waybar.css", dst = "~/.config/waybar/colors.css" }
+mako = { src = "colors-mako.ini", dst = "~/.config/mako/colors" }
+rofi = { src = "colors-rofi.rasi", dst = "~/.config/rofi/colors.rasi" }
+ghostty = { src = "colors-ghostty.conf", dst = "~/.config/ghostty/themes/wallust-colors" }
+neopywal = { src = "colors-neovim.vim", dst = "~/.cache/wal/colors-wal.vim" }

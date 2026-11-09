@@ -1,0 +1,240 @@
+* {
+    font-family: "JetBrainsMono Nerd Font Propo", "Symbols Nerd Font", monospace;
+    font-size: 13px;
+    border: none;
+    border-radius: 0;
+    min-height: 0;
+}
+
+/* ── Bar container ──────────────────────────────────────────── */
+window#waybar {
+    /*background: rgba(30, 30, 46, 0.999); */
+    background: rgba(30, 30, 46, 0);
+    /*border-bottom: 1px solid alpha(@blue, 0.08); */
+    color: @text;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+window#waybar.hidden {
+    opacity: 0.2;
+}
+
+/* ── Shared module pill ─────────────────────────────────────── */
+.modules-left,
+.modules-center,
+.modules-right {
+    padding: 0 4px;
+}
+
+#workspaces,
+#window,
+#clock,
+#pulseaudio,
+#network,
+#cpu,
+#memory,
+#temperature,
+#battery,
+#tray,
+#custom-power {
+    padding: 0 12px;
+    margin: 4px 2px;
+    border-radius: 8px;
+    background: alpha(@base, 0.80);
+    color: @text;
+    transition: all 0.2s ease;
+}
+
+/* ── Workspaces ─────────────────────────────────────────────── */
+#workspaces {
+    padding: 0 6px;
+    background: transparent;
+}
+
+#workspaces button {
+    padding: 0 7px;
+    min-width: 0;
+    background: transparent;
+    color: @overlay0;
+    border-radius: 6px;
+    transition: all 0.15s ease;
+}
+
+#workspaces button:hover {
+    background: alpha(@blue, 0.12);
+    color: @blue;
+}
+
+#workspaces button.active {
+    color: @blue;
+    background: alpha(@blue, 0.15);
+}
+
+#workspaces button.urgent {
+    color: @red;
+    background: alpha(@red, 0.15);
+}
+
+/* ── Window title ───────────────────────────────────────────── */
+#window {
+    color: @subtext0;
+    font-size: 12px;
+    background: transparent;
+}
+
+/* ── Clock ──────────────────────────────────────────────────── */
+#clock {
+    color: @blue;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+#clock:hover {
+    background: alpha(@blue, 0.12);
+}
+
+/* ── Audio ──────────────────────────────────────────────────── */
+#pulseaudio {
+    color: @mauve;
+}
+
+#pulseaudio.muted {
+    color: @overlay0;
+}
+
+#pulseaudio:hover {
+    background: alpha(@mauve, 0.12);
+}
+
+/* ── Network ────────────────────────────────────────────────── */
+#network {
+    color: @teal;
+}
+
+#network.disconnected {
+    color: @red;
+}
+
+#network:hover {
+    background: alpha(@teal, 0.10);
+}
+
+/* ── CPU ────────────────────────────────────────────────────── */
+#cpu {
+    color: @sky;
+}
+
+#cpu.warning {
+    color: @peach;
+}
+
+#cpu.critical {
+    color: @red;
+}
+
+#cpu:hover {
+    background: alpha(@sky, 0.10);
+}
+
+/* ── Memory ─────────────────────────────────────────────────── */
+#memory {
+    color: @green;
+}
+
+#memory.warning {
+    color: @peach;
+}
+
+#memory.critical {
+    color: @red;
+}
+
+#memory:hover {
+    background: alpha(@green, 0.10);
+}
+
+/* ── Temperature ────────────────────────────────────────────── */
+#temperature {
+    color: @yellow;
+}
+
+#temperature.critical {
+    color: @red;
+    animation: blink 1s linear infinite;
+}
+
+@keyframes blink {
+    to { opacity: 0.5; }
+}
+
+/* ── Battery ────────────────────────────────────────────────── */
+#battery {
+    color: @green;
+}
+
+#battery.charging,
+#battery.plugged {
+    color: @green;
+}
+
+#battery.warning:not(.charging) {
+    color: @peach;
+}
+
+#battery.critical:not(.charging) {
+    color: @red;
+    animation: blink 0.8s linear infinite;
+}
+
+/* ── Tray ───────────────────────────────────────────────────── */
+#tray {
+    background: alpha(@base, 0.80);
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}
+
+/* ── Power button ───────────────────────────────────────────── */
+#custom-power {
+    color: @red;
+    font-size: 15px;
+    padding: 0 14px;
+}
+
+#custom-power:hover {
+    background: alpha(@red, 0.15);
+    color: @red;
+}
+
+@define-color rosewater #f5e0dc;
+@define-color flamingo #f2cdcd;
+@define-color pink #f5c2e7;
+@define-color mauve #cba6f7;
+@define-color red #f38ba8;
+@define-color maroon #eba0ac;
+@define-color peach #fab387;
+@define-color yellow #f9e2af;
+@define-color green #a6e3a1;
+@define-color teal #94e2d5;
+@define-color sky #89dceb;
+@define-color sapphire #74c7ec;
+@define-color blue #89b4fa;
+@define-color lavender #b4befe;
+@define-color text #cdd6f4;
+@define-color subtext1 #bac2de;
+@define-color subtext0 #a6adc8;
+@define-color overlay2 #9399b2;
+@define-color overlay1 #7f849c;
+@define-color overlay0 #6c7086;
+@define-color surface2 #585b70;
+@define-color surface1 #45475a;
+@define-color surface0 #313244;
+@define-color base #1e1e2e;
+@define-color mantle #181825;
+@define-color crust #11111b;

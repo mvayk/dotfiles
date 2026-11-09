@@ -1,0 +1,8 @@
+* {
+    background:   #18171F;
+    foreground:   #ABADB0;
+    selected-bg:  #686775;
+    selected-fg:  #18171F;
+    border-color: #686775;
+    urgent-color: #42454B;
+}

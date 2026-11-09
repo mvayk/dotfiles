@@ -1,0 +1,121 @@
+{
+  "layer": "top",
+  "position": "top",
+  "height": 22,
+  "spacing": 0,
+  "margin-top": 0,
+  "margin-left": 0,
+  "margin-right": 0,
+  "margin-bottom": 0,
+
+  "modules-left": ["hyprland/workspaces", "hyprland/window"],
+
+  "modules-center": [""],
+
+  "modules-right": [
+    "pulseaudio",
+    "network",
+    "cpu",
+    "memory",
+    "temperature",
+    "battery",
+    "tray",
+    "clock",
+  ],
+
+  // ── Workspaces ────────────────────────────────────────────────
+  "hyprland/workspaces": {
+    "format": "{name}",
+    "on-click": "activate",
+  },
+
+  // ── Active window title ───────────────────────────────────────
+  "hyprland/window": {
+    "format": "{}",
+    "max-length": 50,
+    "separate-outputs": true,
+  },
+
+  // ── Clock ─────────────────────────────────────────────────────
+  "clock": {
+    "format": "[ {:%H:%M:%S} ]",
+    "format-alt": "[ {:%a %d %b %Y} ]",
+    "interval": 1,
+    "tooltip-format": "<tt>{calendar}</tt>",
+    "calendar": {
+      "mode": "month",
+      "on-scroll": 1,
+      "format": {
+        "months": "<span color='#cdd6f4'><b>{}</b></span>",
+        "days": "<span color='#cdd6f4'>{}</span>",
+        "weekdays": "<span color='#89b4fa'><b>{}</b></span>",
+        "today": "<span color='#a6e3a1'><b><u>{}</u></b></span>",
+      },
+    },
+    "actions": {
+      "on-click-right": "mode",
+    },
+  },
+
+  // ── Audio ─────────────────────────────────────────────────────
+  "pulseaudio": {
+    "format": "[ volume: {volume}% ]",
+    "format-muted": "[ volume: muted ]",
+    "on-click": "pavucontrol",
+    "on-scroll-up": "pactl set-sink-volume @DEFAULT_SINK@ +2%",
+    "on-scroll-down": "pactl set-sink-volume @DEFAULT_SINK@ -2%",
+    "scroll-step": 2,
+  },
+
+  // ── Network ───────────────────────────────────────────────────
+  "network": {
+    "format-wifi": "[ wifi: {signalStrength}% ]",
+    "format-ethernet": "[ eth: {ipaddr} ]",
+    "format-linked": "[ eth: no ip ]",
+    "format-disconnected": "[ net: offline ]",
+    "format-alt": "[ {essid} up:{bandwidthUpBytes} down:{bandwidthDownBytes} ]",
+    "tooltip-format-wifi": "{essid} ({signalStrength}%)\n{ipaddr}\n{gwaddr}",
+    "tooltip-format-ethernet": "{ifname}\n{ipaddr}/{cidr}",
+    "on-click-right": "nm-connection-editor",
+  },
+
+  // ── CPU ───────────────────────────────────────────────────────
+  "cpu": {
+    "format": "[ cpu: {usage}% ]",
+    "interval": 2,
+    "tooltip": true,
+  },
+
+  // ── Memory ───────────────────────────────────────────────────
+  "memory": {
+    "format": "[ mem: {used:0.1f}G ]",
+    "interval": 5,
+    "tooltip-format": "RAM: {used:0.1f}G / {total:0.1f}G\nSwap: {swapUsed:0.1f}G / {swapTotal:0.1f}G",
+  },
+
+  // ── Temperature ───────────────────────────────────────────────
+  "temperature": {
+    "critical-threshold": 80,
+    "format": "[ temp: {temperatureC}°C ]",
+    "format-critical": "[ temp: {temperatureC}°C ]",
+    "tooltip": false,
+  },
+
+  // ── Battery ───────────────────────────────────────────────────
+  "battery": {
+    "states": {
+      "warning": 30,
+      "critical": 15,
+    },
+    "format": "[ bat: {capacity}% ]",
+    "format-charging": "[ bat: {capacity}% chr ]",
+    "format-plugged": "[ bat: {capacity}% plug ]",
+    "tooltip-format": "{timeTo} — {capacity}%",
+  },
+
+  // ── Tray ──────────────────────────────────────────────────────
+  "tray": {
+    "icon-size": 14,
+    "spacing": 8,
+  },
+}
